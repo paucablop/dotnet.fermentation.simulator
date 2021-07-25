@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="MassBalance.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MathNet.Numerics.FSharp" Version="4.15.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\InhibitionModels\InhibitionModels.fsproj" />
+      <ProjectReference Include="..\KineticModels\KineticModels.fsproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "gJfdO42++MRdjcnPFVE9oKvC693V7OZOPO6ghnA9JMrqCDn598JiynZfwFbeqv2QsouUY8RarQ8ZkPFVbTvDUA==",
+  "success": true,
+  "projectFilePath": "C:\\dev\\fermentation.simulator\\src\\KineticModels\\KineticModels.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PauCabaneros\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
