@@ -1,9 +1,6 @@
 ﻿namespace BatchOperation
 
-open System
-open Fermentation.Simulator.KineticModels
-open MathNet.Numerics.LinearAlgebra
-open MathNet.Numerics.LinearAlgebra
+open Fermentation.Kinetic.Models
 open MathNet.Numerics.LinearAlgebra
 
 module MassBalanance =

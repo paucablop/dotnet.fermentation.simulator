@@ -8,6 +8,18 @@
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
+      "Fermentation.Kinetic.Models/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/Fermentation.Kinetic.Models.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Fermentation.Kinetic.Models.dll": {}
+        }
+      },
       "FluentAssertions/5.10.3": {
         "type": "package",
         "dependencies": {
@@ -1765,8 +1777,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "FSharp.Core": "5.0.0",
-          "Fermentation.Simulator.InhibitionModels": "1.0.0",
-          "Fermentation.Simulator.KineticModels": "1.0.0",
+          "Fermentation.Kinetic.Models": "1.0.0",
           "MathNet.Numerics.FSharp": "4.15.0"
         },
         "compile": {
@@ -1774,32 +1785,6 @@
         },
         "runtime": {
           "bin/placeholder/BatchOperation.dll": {}
-        }
-      },
-      "Fermentation.Simulator.InhibitionModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "FSharp.Core": "5.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Fermentation.Simulator.InhibitionModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Fermentation.Simulator.InhibitionModels.dll": {}
-        }
-      },
-      "Fermentation.Simulator.KineticModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "FSharp.Core": "5.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Fermentation.Simulator.KineticModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Fermentation.Simulator.KineticModels.dll": {}
         }
       }
     }
@@ -1835,6 +1820,19 @@
         "coverlet-icon.png",
         "coverlet.collector.1.3.0.nupkg.sha512",
         "coverlet.collector.nuspec"
+      ]
+    },
+    "Fermentation.Kinetic.Models/1.0.0": {
+      "sha512": "tyGr6yFFsrIOUPYbrLc3PveR4DpXdh5mwsIYrM+1/Sf52cRhernvUseuhz1pFf04BKqP0W8JVTpuPIeVXq4VUQ==",
+      "type": "package",
+      "path": "fermentation.kinetic.models/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fermentation.kinetic.models.1.0.0.nupkg.sha512",
+        "fermentation.kinetic.models.nuspec",
+        "lib/net5.0/Fermentation.Kinetic.Models.dll",
+        "lib/net5.0/Fermentation.Kinetic.Models.xml"
       ]
     },
     "FluentAssertions/5.10.3": {
@@ -5932,23 +5930,12 @@
       "type": "project",
       "path": "../../src/BatchOperation/BatchOperation.fsproj",
       "msbuildProject": "../../src/BatchOperation/BatchOperation.fsproj"
-    },
-    "Fermentation.Simulator.InhibitionModels/1.0.0": {
-      "type": "project",
-      "path": "../../src/InhibitionModels/InhibitionModels.fsproj",
-      "msbuildProject": "../../src/InhibitionModels/InhibitionModels.fsproj"
-    },
-    "Fermentation.Simulator.KineticModels/1.0.0": {
-      "type": "project",
-      "path": "../../src/KineticModels/KineticModels.fsproj",
-      "msbuildProject": "../../src/KineticModels/KineticModels.fsproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "BatchOperation >= 1.0.0",
-      "Fermentation.Simulator.InhibitionModels >= 1.0.0",
-      "Fermentation.Simulator.KineticModels >= 1.0.0",
+      "Fermentation.Kinetic.Models >= 1.0.0",
       "FluentAssertions >= 5.10.3",
       "Microsoft.NET.Test.Sdk >= 16.7.1",
       "coverlet.collector >= 1.3.0",
@@ -5984,12 +5971,6 @@
           "projectReferences": {
             "C:\\dev\\fermentation.simulator\\src\\BatchOperation\\BatchOperation.fsproj": {
               "projectPath": "C:\\dev\\fermentation.simulator\\src\\BatchOperation\\BatchOperation.fsproj"
-            },
-            "C:\\dev\\fermentation.simulator\\src\\InhibitionModels\\InhibitionModels.fsproj": {
-              "projectPath": "C:\\dev\\fermentation.simulator\\src\\InhibitionModels\\InhibitionModels.fsproj"
-            },
-            "C:\\dev\\fermentation.simulator\\src\\KineticModels\\KineticModels.fsproj": {
-              "projectPath": "C:\\dev\\fermentation.simulator\\src\\KineticModels\\KineticModels.fsproj"
             }
           }
         }
@@ -6004,6 +5985,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Fermentation.Kinetic.Models": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "FluentAssertions": {
             "target": "Package",
             "version": "[5.10.3, )"

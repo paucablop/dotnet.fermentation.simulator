@@ -27,7 +27,9 @@ namespace UnitTests
 
 
             // Assert
-            fermentationProfile.Should().BeOfType(typeof(Vector<double>));
+            fermentationProfile[0][0].Should().Be(1.0);
+            fermentationProfile[99][1].Should().BeApproximately(1.5, 1e-5);
+
         }
     }
 }

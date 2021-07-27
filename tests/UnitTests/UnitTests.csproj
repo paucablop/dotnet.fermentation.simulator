@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Fermentation.Kinetic.Models" Version="1.0.0" />
     <PackageReference Include="FluentAssertions" Version="5.10.3" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
     <PackageReference Include="xunit" Version="2.4.1" />
@@ -22,8 +23,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\BatchOperation\BatchOperation.fsproj" />
-    <ProjectReference Include="..\..\src\InhibitionModels\InhibitionModels.fsproj" />
-    <ProjectReference Include="..\..\src\KineticModels\KineticModels.fsproj" />
   </ItemGroup>
 
 </Project>

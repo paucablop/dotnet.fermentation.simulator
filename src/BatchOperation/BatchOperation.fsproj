@@ -10,12 +10,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Fermentation.Kinetic.Models" Version="1.0.0" />
       <PackageReference Include="MathNet.Numerics.FSharp" Version="4.15.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\InhibitionModels\InhibitionModels.fsproj" />
-      <ProjectReference Include="..\KineticModels\KineticModels.fsproj" />
     </ItemGroup>
 
 </Project>
