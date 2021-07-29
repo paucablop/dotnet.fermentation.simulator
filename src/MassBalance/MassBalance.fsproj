@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <RootNamespace>Fermentation.Simulator.Mass.Balance</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="KineticRates.fs" />
+        <Compile Include="Generation.fs" />
+        <Compile Include="InOut.fs" />
+        <Compile Include="Calculate.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\YeastKineticModel\YeastKineticModel.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Fermentation.Kinetic.Models" Version="1.0.3" />
+      <PackageReference Include="MathNet.Numerics.FSharp" Version="4.15.0" />
+    </ItemGroup>
+
+</Project>

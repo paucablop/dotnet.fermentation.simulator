@@ -41,7 +41,76 @@
             },
             "Fermentation.Kinetic.Models": {
               "target": "Package",
-              "version": "[1.0.0, )",
+              "version": "[1.0.3, )",
+              "generatePathProperty": true
+            },
+            "MathNet.Numerics.FSharp": {
+              "target": "Package",
+              "version": "[4.15.0, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj",
+        "projectName": "MassBalance",
+        "projectPath": "C:\\dev\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj",
+        "packagesPath": "C:\\Users\\PauCabaneros\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\fermentation.simulator\\src\\MassBalance\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PauCabaneros\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://internal.nexus.specshell.systems/repository/nuget-hosted/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\dev\\fermentation.simulator\\YeastKineticModel\\YeastKineticModel.csproj": {
+                "projectPath": "C:\\dev\\fermentation.simulator\\YeastKineticModel\\YeastKineticModel.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FSharp.Core": {
+              "target": "Package",
+              "version": "[5.0.0, )",
+              "generatePathProperty": true
+            },
+            "Fermentation.Kinetic.Models": {
+              "target": "Package",
+              "version": "[1.0.3, )",
               "generatePathProperty": true
             },
             "MathNet.Numerics.FSharp": {
@@ -94,6 +163,9 @@
             "projectReferences": {
               "C:\\dev\\fermentation.simulator\\src\\BatchOperation\\BatchOperation.fsproj": {
                 "projectPath": "C:\\dev\\fermentation.simulator\\src\\BatchOperation\\BatchOperation.fsproj"
+              },
+              "C:\\dev\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj": {
+                "projectPath": "C:\\dev\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj"
               }
             }
           }
@@ -110,7 +182,7 @@
           "dependencies": {
             "Fermentation.Kinetic.Models": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[1.0.3, )"
             },
             "FluentAssertions": {
               "target": "Package",
@@ -135,6 +207,65 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\fermentation.simulator\\YeastKineticModel\\YeastKineticModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\fermentation.simulator\\YeastKineticModel\\YeastKineticModel.csproj",
+        "projectName": "YeastKineticModel",
+        "projectPath": "C:\\dev\\fermentation.simulator\\YeastKineticModel\\YeastKineticModel.csproj",
+        "packagesPath": "C:\\Users\\PauCabaneros\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\fermentation.simulator\\YeastKineticModel\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PauCabaneros\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://internal.nexus.specshell.systems/repository/nuget-hosted/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Fermentation.Kinetic.Interfaces": {
+              "target": "Package",
+              "version": "[1.0.3, )"
             }
           },
           "imports": [

@@ -1,11 +1,12 @@
 ﻿using System;
+using Fermentation.Simulator.Mass.Balance;
 using FluentAssertions;
 using MathNet.Numerics.LinearAlgebra;
 using Xunit;
 
 namespace UnitTests
 {
-    public class SolveModelUnitTest
+    public class SolveModelFactoredUnitTest
     {
         [Fact]
         public void TestOdeSolution()
@@ -18,7 +19,7 @@ namespace UnitTests
             var initialConditions = Vector<double>.Build.Dense(2, 1.0);
 
             Func<double, Vector<double>, Vector<double>> differentialEquations = (t, concentrations) =>
-                BatchOperation.MassBalanance.DifferentialEquationsSystem(concentrations);
+                Generation.DifferentialEquationsSystem(concentrations);
 
             // Act
             var fermentationProfile =
