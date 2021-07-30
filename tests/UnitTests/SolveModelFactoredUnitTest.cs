@@ -16,10 +16,10 @@ namespace UnitTests
             var endingTime = 10.0;
             var timeSteps = 100;
 
-            var initialConditions = Vector<double>.Build.Dense(2, 1.0);
+            var initialConditions = Vector<double>.Build.Dense(3, 1.0);
 
             Func<double, Vector<double>, Vector<double>> differentialEquations = (t, concentrations) =>
-                Generation.DifferentialEquationsSystem(concentrations);
+                Calculate.DifferentialEquations(concentrations);
 
             // Act
             var fermentationProfile =
@@ -29,7 +29,7 @@ namespace UnitTests
 
             // Assert
             fermentationProfile[0][0].Should().Be(1.0);
-            fermentationProfile[99][1].Should().BeApproximately(1.5, 1e-5);
+            fermentationProfile[99][1].Should().BeApproximately(1.51, 1e-5);
 
         }
     }
