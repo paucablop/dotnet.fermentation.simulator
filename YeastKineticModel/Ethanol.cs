@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 namespace Yeast.Kinetic.Model
 {
     [PublicAPI]
-    public record EthanolInhibition : ISuddenProductInhibition
+    public record EthanolInhibition : ISuddenInhibition
     {
         public double InhibitionConstant { get; init; }
         public double ExponentialConstant { get; init; }

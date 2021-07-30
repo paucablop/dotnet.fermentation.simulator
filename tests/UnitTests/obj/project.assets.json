@@ -8,7 +8,7 @@
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
-      "Fermentation.Kinetic.Interfaces/1.0.6": {
+      "Fermentation.Kinetic.Interfaces/2.0.1": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "2021.2.0"
@@ -20,11 +20,11 @@
           "lib/net5.0/Fermentation.Kinetic.Interfaces.dll": {}
         }
       },
-      "Fermentation.Kinetic.Models/1.0.6": {
+      "Fermentation.Kinetic.Models/2.0.1": {
         "type": "package",
         "dependencies": {
           "FSharp.Core": "5.0.0",
-          "Fermentation.Kinetic.Interfaces": "1.0.6"
+          "Fermentation.Kinetic.Interfaces": "2.0.1"
         },
         "compile": {
           "lib/net5.0/Fermentation.Kinetic.Models.dll": {}
@@ -1799,8 +1799,9 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "FSharp.Core": "5.0.0",
-          "Fermentation.Kinetic.Models": "1.0.6",
+          "Fermentation.Kinetic.Models": "2.0.1",
           "MathNet.Numerics.FSharp": "4.15.0",
+          "StateVariables": "1.0.0",
           "YeastKineticModel": "1.0.0"
         },
         "compile": {
@@ -1810,11 +1811,25 @@
           "bin/placeholder/MassBalance.dll": {}
         }
       },
+      "StateVariables/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "JetBrains.Annotations": "2021.2.0",
+          "MathNet.Numerics": "4.15.0"
+        },
+        "compile": {
+          "bin/placeholder/StateVariables.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StateVariables.dll": {}
+        }
+      },
       "YeastKineticModel/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Fermentation.Kinetic.Interfaces": "1.0.6"
+          "Fermentation.Kinetic.Interfaces": "2.0.1"
         },
         "compile": {
           "bin/placeholder/YeastKineticModel.dll": {}
@@ -1858,26 +1873,26 @@
         "coverlet.collector.nuspec"
       ]
     },
-    "Fermentation.Kinetic.Interfaces/1.0.6": {
-      "sha512": "0qXbUWVoBn2r4kNNm76SeeXPCwPI4OUC71KY3Rz0EdahMRlsoUAlsWpQK3pk6iDucsRkPEjARbRRsWL1DXRLag==",
+    "Fermentation.Kinetic.Interfaces/2.0.1": {
+      "sha512": "NFiWU9wiTWxtA2Z1wm3UQ7a89UMtewRXaf7Ml4Uhs3WvDWL3Da4xg5Sb9ss+qZo/oPiEAKBamuocHulOPVKhRg==",
       "type": "package",
-      "path": "fermentation.kinetic.interfaces/1.0.6",
+      "path": "fermentation.kinetic.interfaces/2.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "fermentation.kinetic.interfaces.1.0.6.nupkg.sha512",
+        "fermentation.kinetic.interfaces.2.0.1.nupkg.sha512",
         "fermentation.kinetic.interfaces.nuspec",
         "lib/net5.0/Fermentation.Kinetic.Interfaces.dll"
       ]
     },
-    "Fermentation.Kinetic.Models/1.0.6": {
-      "sha512": "7p/b50V8JuQpwP0DfeMpfIabt3pjNimNO7IbIDfrR34833kMq61ZWJSA9bKptKpeq+FdXwR374UTYOFiIkDUbg==",
+    "Fermentation.Kinetic.Models/2.0.1": {
+      "sha512": "lo0xN6WaIaZKrtqTjtqnf427GN2bZA2DLYaOnmsulSoin7YDVzfTB3BdxpKLT5LkqqyC0H3UxWXiF8N1RIPGkA==",
       "type": "package",
-      "path": "fermentation.kinetic.models/1.0.6",
+      "path": "fermentation.kinetic.models/2.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "fermentation.kinetic.models.1.0.6.nupkg.sha512",
+        "fermentation.kinetic.models.2.0.1.nupkg.sha512",
         "fermentation.kinetic.models.nuspec",
         "lib/net5.0/Fermentation.Kinetic.Models.dll",
         "lib/net5.0/Fermentation.Kinetic.Models.xml"
@@ -6001,6 +6016,11 @@
       "path": "../../src/MassBalance/MassBalance.fsproj",
       "msbuildProject": "../../src/MassBalance/MassBalance.fsproj"
     },
+    "StateVariables/1.0.0": {
+      "type": "project",
+      "path": "../../src/StateVariables/StateVariables.csproj",
+      "msbuildProject": "../../src/StateVariables/StateVariables.csproj"
+    },
     "YeastKineticModel/1.0.0": {
       "type": "project",
       "path": "../../YeastKineticModel/YeastKineticModel.csproj",
@@ -6009,7 +6029,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Fermentation.Kinetic.Models >= 1.0.6",
+      "Fermentation.Kinetic.Models >= 2.0.1",
       "FluentAssertions >= 5.10.3",
       "MassBalance >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.7.1",
@@ -6062,7 +6082,7 @@
         "dependencies": {
           "Fermentation.Kinetic.Models": {
             "target": "Package",
-            "version": "[1.0.6, )"
+            "version": "[2.0.1, )"
           },
           "FluentAssertions": {
             "target": "Package",
