@@ -3,7 +3,7 @@
 open Fermentation.Kinetic.Models
 open Fermentation.Simulator.Yeast.Anaerobic.Model
 open MathNet.Numerics.LinearAlgebra
-open StateVariables
+open Fermentation.Simulator.State.Variables
 
 module KineticRates =
 

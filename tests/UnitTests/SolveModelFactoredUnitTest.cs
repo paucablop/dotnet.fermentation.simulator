@@ -27,7 +27,7 @@ namespace UnitTests
 
             // Assert
             fermentationProfile[0][0].Should().Be(1.0);
-            fermentationProfile[99][1].Should().BeApproximately(1.509982539693151, 1e-5);
+            fermentationProfile[99][2].Should().BeApproximately(1.509982539693151, 1e-5);
         }
         [Fact]
         public void TestFSharpOdeSolution()
@@ -44,7 +44,7 @@ namespace UnitTests
 
             // Assert
             fermentationProfile[0][0].Should().Be(1.0);
-            fermentationProfile[99][1].Should().BeApproximately( 1.509982539693151, 1e-5);
+            fermentationProfile[99][2].Should().BeApproximately( 1.509982539693151, 1e-5);
 
         }
     }

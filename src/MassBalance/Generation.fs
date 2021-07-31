@@ -3,12 +3,11 @@
 open MathNet.Numerics.LinearAlgebra
 
 module Generation =
-    let stoichionometricMatrix = Matrix.Build.Dense(2, 4, 0.0)
-    stoichionometricMatrix.[0, 0] <- -1.0
-    stoichionometricMatrix.[0, 1] <- 0.51
-    stoichionometricMatrix.[0, 2] <- 0.49
-    stoichionometricMatrix.[0, 3] <- 0.0
-    stoichionometricMatrix.[1, 3] <- -1.0
+    let stoichionometricMatrix =
+        Matrix.Build.DenseDiagonal(2, 4, -1.0)        
+    stoichionometricMatrix.[0, 2] <- 0.51
+    stoichionometricMatrix.[0, 3] <- 0.49
 
+    
     let Calculate (kineticRates: Vector<float>) =
         stoichionometricMatrix.Transpose() * kineticRates

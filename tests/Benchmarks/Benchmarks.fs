@@ -1,11 +1,9 @@
 ﻿module Benchmarks 
 
-open System
-open BenchmarkDotNet
 open BenchmarkDotNet.Attributes
 open Fermentation.Simulator.Mass.Balance
 open MathNet.Numerics.LinearAlgebra
-open StateVariables
+open Fermentation.Simulator.State.Variables
 
 [<MemoryDiagnoser>]
 type Benchmarks () =
