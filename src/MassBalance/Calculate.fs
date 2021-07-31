@@ -1,5 +1,6 @@
 ﻿namespace Fermentation.Simulator.Mass.Balance
 
+open Fermentation.Simulator.Mass.Balance
 open MathNet.Numerics.LinearAlgebra
 open StateVariables
 

@@ -1802,7 +1802,7 @@
           "Fermentation.Kinetic.Models": "2.0.1",
           "MathNet.Numerics.FSharp": "4.15.0",
           "StateVariables": "1.0.0",
-          "YeastKineticModel": "1.0.0"
+          "YeastAnaerobicModel": "1.0.0"
         },
         "compile": {
           "bin/placeholder/MassBalance.dll": {}
@@ -1825,17 +1825,17 @@
           "bin/placeholder/StateVariables.dll": {}
         }
       },
-      "YeastKineticModel/1.0.0": {
+      "YeastAnaerobicModel/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Fermentation.Kinetic.Interfaces": "2.0.1"
         },
         "compile": {
-          "bin/placeholder/YeastKineticModel.dll": {}
+          "bin/placeholder/YeastAnaerobicModel.dll": {}
         },
         "runtime": {
-          "bin/placeholder/YeastKineticModel.dll": {}
+          "bin/placeholder/YeastAnaerobicModel.dll": {}
         }
       }
     }
@@ -6021,10 +6021,10 @@
       "path": "../../src/StateVariables/StateVariables.csproj",
       "msbuildProject": "../../src/StateVariables/StateVariables.csproj"
     },
-    "YeastKineticModel/1.0.0": {
+    "YeastAnaerobicModel/1.0.0": {
       "type": "project",
-      "path": "../../YeastKineticModel/YeastKineticModel.csproj",
-      "msbuildProject": "../../YeastKineticModel/YeastKineticModel.csproj"
+      "path": "../../YeastAnaerobicModel/YeastAnaerobicModel.csproj",
+      "msbuildProject": "../../YeastAnaerobicModel/YeastAnaerobicModel.csproj"
     }
   },
   "projectFileDependencyGroups": {

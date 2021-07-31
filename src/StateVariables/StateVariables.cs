@@ -6,12 +6,12 @@ namespace StateVariables
     [PublicAPI]
     public class StateVariables : IStateVariables
     {
-        public StateVariables(Vector<double> concentrationsVector)
+        public StateVariables(Vector<double> stateVariablesVector)
         {
-            Glucose = concentrationsVector[0];
-            Ethanol = concentrationsVector[1];
-            Biomass = concentrationsVector[2];
-            Furfural = concentrationsVector[3];
+            Glucose = stateVariablesVector[0];
+            Ethanol = stateVariablesVector[1];
+            Biomass = stateVariablesVector[2];
+            Furfural = stateVariablesVector[3];
         }
 
         public double Glucose { get; set; }

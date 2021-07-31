@@ -30,8 +30,8 @@
               "C:\\dev\\fermentation.simulator\\src\\StateVariables\\StateVariables.csproj": {
                 "projectPath": "C:\\dev\\fermentation.simulator\\src\\StateVariables\\StateVariables.csproj"
               },
-              "C:\\dev\\fermentation.simulator\\YeastKineticModel\\YeastKineticModel.csproj": {
-                "projectPath": "C:\\dev\\fermentation.simulator\\YeastKineticModel\\YeastKineticModel.csproj"
+              "C:\\dev\\fermentation.simulator\\YeastAnaerobicModel\\YeastAnaerobicModel.csproj": {
+                "projectPath": "C:\\dev\\fermentation.simulator\\YeastAnaerobicModel\\YeastAnaerobicModel.csproj"
               }
             }
           }
@@ -226,14 +226,14 @@
         }
       }
     },
-    "C:\\dev\\fermentation.simulator\\YeastKineticModel\\YeastKineticModel.csproj": {
+    "C:\\dev\\fermentation.simulator\\YeastAnaerobicModel\\YeastAnaerobicModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\fermentation.simulator\\YeastKineticModel\\YeastKineticModel.csproj",
-        "projectName": "YeastKineticModel",
-        "projectPath": "C:\\dev\\fermentation.simulator\\YeastKineticModel\\YeastKineticModel.csproj",
+        "projectUniqueName": "C:\\dev\\fermentation.simulator\\YeastAnaerobicModel\\YeastAnaerobicModel.csproj",
+        "projectName": "YeastAnaerobicModel",
+        "projectPath": "C:\\dev\\fermentation.simulator\\YeastAnaerobicModel\\YeastAnaerobicModel.csproj",
         "packagesPath": "C:\\Users\\PauCabaneros\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\fermentation.simulator\\YeastKineticModel\\obj\\",
+        "outputPath": "C:\\dev\\fermentation.simulator\\YeastAnaerobicModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PauCabaneros\\AppData\\Roaming\\NuGet\\NuGet.Config"

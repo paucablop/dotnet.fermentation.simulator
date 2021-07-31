@@ -10,10 +10,11 @@
         <Compile Include="KineticRates.fs" />
         <Compile Include="Generation.fs" />
         <Compile Include="Calculate.fs" />
+        <Compile Include="Program.fs" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\YeastKineticModel\YeastKineticModel.csproj" />
+      <ProjectReference Include="..\..\YeastAnaerobicModel\YeastAnaerobicModel.csproj" />
       <ProjectReference Include="..\StateVariables\StateVariables.csproj" />
     </ItemGroup>
 

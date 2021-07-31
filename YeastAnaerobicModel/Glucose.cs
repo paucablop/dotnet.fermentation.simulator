@@ -1,7 +1,8 @@
 ﻿using Fermentation.Kinetic.Interfaces;
 using JetBrains.Annotations;
 
-namespace Yeast.Kinetic.Model
+namespace Fermentation.Simulator.Yeast.Anaerobic.Model
+
 {
     [PublicAPI]
     public record GlucoseMonodSubstrateInhibition : IMonodInhibition

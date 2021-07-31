@@ -2,7 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>Yeast.Kinetic.Model</RootNamespace>
+        <RootNamespace>Fermentation.Simulator.Yeast.Anaerobic.Model</RootNamespace>
+
     </PropertyGroup>
 
     <ItemGroup>
