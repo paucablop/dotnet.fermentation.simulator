@@ -1,9 +1,9 @@
 ﻿namespace Fermentation.Simulator.Mass.Balance
 
 open Fermentation.Kinetic.Models
+open Fermentation.Simulator.Interfaces
 open Fermentation.Simulator.Yeast.Anaerobic.Model
 open MathNet.Numerics.LinearAlgebra
-open Fermentation.Simulator.State.Variables
 
 module KineticRates =
 
@@ -17,5 +17,5 @@ module KineticRates =
             UptakeModels.Monod(stateVariables.Furfural, FurfuralMonod())
 
         [| glucoseRate; furfuralRate |]
-            |> Array.map (fun x -> x * stateVariables.Biomass)
-            |> vector
+        |> Array.map (fun x -> x * stateVariables.Biomass)
+        |> vector

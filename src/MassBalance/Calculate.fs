@@ -1,8 +1,7 @@
 ﻿namespace Fermentation.Simulator.Mass.Balance
 
-open Fermentation.Simulator.Mass.Balance
+open Fermentation.Simulator.Process.Model
 open MathNet.Numerics.LinearAlgebra
-open Fermentation.Simulator.State.Variables
 
 module Calculate =
     let DifferentialEquations (stateVariablesVector: Vector<float>) =

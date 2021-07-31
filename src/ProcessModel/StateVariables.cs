@@ -1,7 +1,8 @@
-﻿using JetBrains.Annotations;
+﻿using Fermentation.Simulator.Interfaces;
+using JetBrains.Annotations;
 using MathNet.Numerics.LinearAlgebra;
 
-namespace Fermentation.Simulator.State.Variables
+namespace Fermentation.Simulator.Process.Model
 {
     [PublicAPI]
     public class StateVariables : IStateVariables

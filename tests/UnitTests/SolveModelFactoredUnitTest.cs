@@ -40,7 +40,7 @@ namespace UnitTests
             
             // Act
             var fermentationProfile =
-                Program.Solve(initialConditions, startingTime, endingTime, timeSteps);
+                Program.Run(initialConditions, startingTime, endingTime, timeSteps);
 
             // Assert
             fermentationProfile[0][0].Should().Be(1.0);

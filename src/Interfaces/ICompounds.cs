@@ -1,9 +1,9 @@
 ﻿using JetBrains.Annotations;
 
-namespace Fermentation.Simulator.State.Variables
+namespace Fermentation.Simulator.Interfaces
 {
     [PublicAPI]
-    public interface IStateVariables
+    public interface ICompounds
     {
         double Glucose { get; set; }
         double Furfural { get; set; }

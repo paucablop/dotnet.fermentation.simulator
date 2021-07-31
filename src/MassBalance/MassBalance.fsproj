@@ -9,18 +9,21 @@
     <ItemGroup>
         <Compile Include="KineticRates.fs" />
         <Compile Include="Generation.fs" />
+        <Compile Include="InOut.fs" />
         <Compile Include="Calculate.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\YeastAnaerobicModel\YeastAnaerobicModel.csproj" />
-      <ProjectReference Include="..\StateVariables\StateVariables.csproj" />
+      <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
+      <ProjectReference Include="..\ProcessModel\ProcessModel.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Fermentation.Kinetic.Models" Version="2.0.1" />
       <PackageReference Include="MathNet.Numerics.FSharp" Version="4.15.0" />
+      <PackageReference Include="Plotly.NET" Version="2.0.0-preview.6" />
     </ItemGroup>
 
 </Project>

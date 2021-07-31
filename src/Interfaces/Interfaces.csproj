@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <LangVersion>latest</LangVersion>
-        <RootNamespace>Fermentation.Simulator.State.Variables</RootNamespace>
+        <RootNamespace>Fermentation.Simulator.Interfaces</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

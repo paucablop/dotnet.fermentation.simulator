@@ -26,7 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\MassBalance\MassBalance.fsproj" />
-    <ProjectReference Include="..\..\src\StateVariables\StateVariables.csproj" />
+    <ProjectReference Include="..\..\src\Interfaces\Interfaces.csproj" />
     <ProjectReference Include="..\..\YeastAnaerobicModel\YeastAnaerobicModel.csproj" />
   </ItemGroup>
 </Project>

@@ -2,8 +2,8 @@
 
 open BenchmarkDotNet.Attributes
 open Fermentation.Simulator.Mass.Balance
+open Fermentation.Simulator.Process.Model
 open MathNet.Numerics.LinearAlgebra
-open Fermentation.Simulator.State.Variables
 
 [<MemoryDiagnoser>]
 type Benchmarks () =
@@ -27,7 +27,7 @@ type Benchmarks () =
         
     [<Benchmark>]
     member this.ProgramSolve() =
-        Program.Solve(initialConditions, startTime, endTime, timeSteps)
+        Program.Run(initialConditions, startTime, endTime, timeSteps)
         
 
 

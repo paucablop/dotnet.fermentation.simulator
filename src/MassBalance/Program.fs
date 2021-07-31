@@ -2,10 +2,11 @@
 
 open Fermentation.Simulator.Mass.Balance
 open MathNet.Numerics.LinearAlgebra
+open Plotly.NET
 
 module Program =
 
-    let Solve (initialConditions: Vector<float>, startTime: float, endTime: float, timeSteps: int) =
+    let Run (initialConditions: Vector<float>, startTime: float, endTime: float, timeSteps: int) =
         let f =
             System.Func<float, Vector<float>, Vector<float>>
                 (fun time concentrationsVector -> Calculate.DifferentialEquations(concentrationsVector))
