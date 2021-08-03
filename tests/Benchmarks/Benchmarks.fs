@@ -12,18 +12,18 @@ type Benchmarks () =
     let endTime = 10.0
     let timeSteps = 100
     let stateVariables = initialConditions |> StateVariables
-    let kineticRates = stateVariables |> KineticRates.Calculate 
+    let kineticRates = stateVariables |> UptakeRates.Calculate 
     [<Benchmark>]
     member this.StateVariable () =
         initialConditions |> StateVariables
 
     [<Benchmark>]
     member this.KineticRatesCalculate() =
-        KineticRates.Calculate(stateVariables)
+        UptakeRates.Calculate(stateVariables)
         
     [<Benchmark>]
     member this.GenerationCalculate() =
-        Generation.Calculate(kineticRates)
+        KineticRates.Calculate(kineticRates)
         
     [<Benchmark>]
     member this.ProgramSolve() =

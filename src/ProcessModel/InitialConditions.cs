@@ -1,27 +1,26 @@
 ﻿using Fermentation.Simulator.Interfaces;
 using JetBrains.Annotations;
-using MathNet.Numerics.LinearAlgebra;
 
 namespace Fermentation.Simulator.Process.Model
 {
     [PublicAPI]
-    public record InletConcentrations : ICompounds
+    public class InitialConditions : IStateVariables
     {
         public double Glucose { get; set; }
         public double Furfural { get; set; }
         public double Ethanol { get; set; }
         public double Biomass { get; set; }
-        public InletConcentrations()
-        {
-            Glucose = 0.5;
-            Furfural = 0.5;
-            Ethanol = 0.0;
-            Biomass = 0.0;
-        }
+        public double FlowRate { get; set; }
+        public double Volume { get; set; }
 
-        public void InletConcentratrionsAsVector()
+        public InitialConditions()
         {
+            Glucose = 1.0;
+            Furfural = 1.0;
+            Ethanol = 1.0;
+            Biomass = 1.0;
+            FlowRate = 1.0;
+            Volume = 1.0;
         }
-
     }
 }

@@ -5,7 +5,16 @@ open MathNet.Numerics.LinearAlgebra
 
 module Calculate =
     let DifferentialEquations (stateVariablesVector: Vector<float>) =
-        stateVariablesVector
-        |> StateVariables
-        |> KineticRates.Calculate
-        |> Generation.Calculate
+
+        let stateVariables = stateVariablesVector |> StateVariables
+
+        let inletCompounds = stateVariables |> Inlet.Calculate
+
+        let kineticRates =
+            stateVariables
+            |> UptakeRates.Calculate
+            |> KineticRates.Calculate
+
+        let accumulationCompounds = inletCompounds + kineticRates
+
+        accumulationCompounds

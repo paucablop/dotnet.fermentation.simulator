@@ -1,21 +1,13 @@
 ﻿namespace Fermentation.Simulator.Mass.Balance
 
-open Fermentation.Kinetic.Models
-open Fermentation.Simulator.Interfaces
-open Fermentation.Simulator.Yeast.Anaerobic.Model
 open MathNet.Numerics.LinearAlgebra
-
+open Fermentation.Simulator.Process.Model
 module KineticRates =
+    let stoichionometricMatrix =
+        Matrix.Build.DenseDiagonal(2, 4, -1.0)        
+    stoichionometricMatrix.[0, 2] <- 0.510
+    stoichionometricMatrix.[0, 3] <- 0.490
 
-    let Calculate (stateVariables: IStateVariables) =
-        let glucoseRate =
-            UptakeModels.MonodSubstrateInhibition(stateVariables.Glucose, GlucoseMonodSubstrateInhibition())
-            * Inhibition.SuddenInhibition(stateVariables.Ethanol, EthanolInhibition())
-            * Inhibition.InverseInhibition(stateVariables.Furfural, FurfuralInhibition())
-
-        let furfuralRate =
-            UptakeModels.Monod(stateVariables.Furfural, FurfuralMonod())
-
-        [| glucoseRate; furfuralRate |]
-        |> Array.map (fun x -> x * stateVariables.Biomass)
-        |> vector
+    
+    let Calculate (kineticRates: Vector<float>) =
+        stoichionometricMatrix.Transpose() * kineticRates

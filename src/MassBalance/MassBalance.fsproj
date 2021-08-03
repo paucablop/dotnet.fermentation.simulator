@@ -7,9 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="Inlet.fs" />
+        <Compile Include="UptakeRates.fs" />
         <Compile Include="KineticRates.fs" />
-        <Compile Include="Generation.fs" />
-        <Compile Include="InOut.fs" />
         <Compile Include="Calculate.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
