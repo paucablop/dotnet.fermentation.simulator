@@ -7,7 +7,7 @@ open MathNet.Numerics.LinearAlgebra
 
 [<MemoryDiagnoser>]
 type Benchmarks () =
-    let initialConditions = Vector<double>.Build.Dense(4, 1.0)
+    let initialConditions = Vector<double>.Build.Dense(6, 1.0)
     let startTime = 0.0
     let endTime = 10.0
     let timeSteps = 100
