@@ -19,7 +19,7 @@ namespace Fermentation.Simulator.Process.Model
             Furfural = 1.0;
             Ethanol = 1.0;
             Biomass = 1.0;
-            FlowRate = 1.0;
+            FlowRate = 0.0;
             Volume = 1.0;
         }
     }

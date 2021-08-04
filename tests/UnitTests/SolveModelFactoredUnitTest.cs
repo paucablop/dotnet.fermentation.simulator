@@ -15,7 +15,7 @@ namespace UnitTests
             var startingTime = 0.0;
             var endingTime = 10.0;
             var timeSteps = 100;
-            var initialConditions = Vector<double>.Build.Dense(4, 1.0);
+            var initialConditions = Vector<double>.Build.Dense(6, 1.0);
 
             Func<double, Vector<double>, Vector<double>> differentialEquations = (t, concentrations) =>
                 Calculate.DifferentialEquations(concentrations);
@@ -36,15 +36,15 @@ namespace UnitTests
             var startingTime = 0.0;
             var endingTime = 10.0;
             var timeSteps = 100;
-            var initialConditions = Vector<double>.Build.Dense(4, 1.0);
-            
+            var initialConditions = Vector<double>.Build.Dense(6, 1.0);
+            initialConditions[4] = 0.0;
             // Act
             var fermentationProfile =
                 Program.Run(initialConditions, startingTime, endingTime, timeSteps);
 
             // Assert
             fermentationProfile[0][0].Should().Be(1.0);
-            fermentationProfile[99][2].Should().BeApproximately( 1.509982539693151, 1e-5);
+            fermentationProfile[80][2].Should().BeApproximately( 1.509982539693151, 1e-3);
 
         }
     }
