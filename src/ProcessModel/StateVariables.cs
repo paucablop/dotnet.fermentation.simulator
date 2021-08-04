@@ -1,4 +1,5 @@
-﻿using Fermentation.Simulator.Interfaces;
+﻿using System;
+using Fermentation.Simulator.Interfaces;
 using JetBrains.Annotations;
 using MathNet.Numerics.LinearAlgebra;
 
@@ -19,8 +20,10 @@ namespace Fermentation.Simulator.Process.Model
             Furfural = stateVariablesVector[1];
             Ethanol = stateVariablesVector[2];
             Biomass = stateVariablesVector[3];
-            FlowRate = stateVariablesVector[4];
             Volume = stateVariablesVector[5];
+            FlowRate = Volume <= 10 ? stateVariablesVector[4] : 0.0;
+            
+
         }
 
 

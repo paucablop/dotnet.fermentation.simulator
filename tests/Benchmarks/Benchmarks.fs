@@ -18,11 +18,11 @@ type Benchmarks () =
         initialConditions |> StateVariables
 
     [<Benchmark>]
-    member this.KineticRatesCalculate() =
+    member this.UptakeRatesCalculate() =
         UptakeRates.Calculate(stateVariables)
         
     [<Benchmark>]
-    member this.GenerationCalculate() =
+    member this.KineticRatesCalculate() =
         KineticRates.Calculate(kineticRates)
         
     [<Benchmark>]

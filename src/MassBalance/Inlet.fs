@@ -10,7 +10,7 @@ module Inlet =
         compoundConcentrationTank
         - compoundConcentrationInlet
 
-    let Calculate (stateVariables: IStateVariables) =
+    let CalculateCompounds (stateVariables: IStateVariables) =
 
         let glucoseInOut =
             ConcentrationDifference(stateVariables.Glucose, InletConcentrations().Glucose)
@@ -33,3 +33,9 @@ module Inlet =
                 x * stateVariables.FlowRate
                 / stateVariables.Volume)
         |> vector
+
+    let CalculateFlowRateAndVolume (stateVariables: IStateVariables) =
+        let flowRate = 0.0
+        let volume = stateVariables.FlowRate
+
+        [| flowRate; volume |] |> vector
