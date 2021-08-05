@@ -30,12 +30,12 @@ module Inlet =
            biomassInOut |]
         |> Array.map
             (fun x ->
-                x * stateVariables.FlowRate
+                x * stateVariables.Flowrate
                 / stateVariables.Volume)
         |> vector
 
     let CalculateFlowRateAndVolume (stateVariables: IStateVariables) =
         let flowRate = 0.0
-        let volume = stateVariables.FlowRate
+        let volume = stateVariables.Flowrate
 
         [| flowRate; volume |] |> vector

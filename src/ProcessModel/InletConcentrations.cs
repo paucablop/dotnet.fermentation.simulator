@@ -1,6 +1,5 @@
 ﻿using Fermentation.Simulator.Interfaces;
 using JetBrains.Annotations;
-using MathNet.Numerics.LinearAlgebra;
 
 namespace Fermentation.Simulator.Process.Model
 {

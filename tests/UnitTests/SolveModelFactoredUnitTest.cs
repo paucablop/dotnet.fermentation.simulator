@@ -1,5 +1,4 @@
-﻿using System;
-using Fermentation.Simulator.Mass.Balance;
+﻿using Fermentation.Simulator.Mass.Balance;
 using FluentAssertions;
 using MathNet.Numerics.LinearAlgebra;
 using Xunit;
@@ -16,6 +15,7 @@ namespace UnitTests
             var endingTime = 10.0;
             var timeSteps = 100;
             var initialConditions = Vector<double>.Build.Dense(6, 1.0);
+            initialConditions[4] = 0.0;
             // Act
             var fermentationProfile =
                 Program.Run(initialConditions, startingTime, endingTime, timeSteps);

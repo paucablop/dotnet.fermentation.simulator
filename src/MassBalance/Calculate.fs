@@ -7,10 +7,13 @@ module Calculate =
     let DifferentialEquations (stateVariablesVector: Vector<float>) =
 
         let stateVariables = stateVariablesVector |> StateVariables
-
+        let differentialStateVariables = DifferentialStateVariables()
+        
         let flowRateAndVolume =
-            stateVariables |> Inlet.CalculateFlowRateAndVolume
-
+            stateVariables
+            |> Inlet.CalculateFlowRateAndVolume
+            |> differentialStateVariables.FlowRateAndVolumeFromVector
+            
         let inletCompounds =
             stateVariables |> Inlet.CalculateCompounds
 
@@ -19,14 +22,6 @@ module Calculate =
             |> UptakeRates.Calculate
             |> KineticRates.Calculate
             |> (+) inletCompounds
-
-        let differentialEquations =
-            [| kineticRates.[0]
-               kineticRates.[1]
-               kineticRates.[2]
-               kineticRates.[3]
-               flowRateAndVolume.[0]
-               flowRateAndVolume.[1] |]
+            |> differentialStateVariables.CompoundsFromVector
             
-
-        differentialEquations |> vector
+        differentialStateVariables.ToVector()
