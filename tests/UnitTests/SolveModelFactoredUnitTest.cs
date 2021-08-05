@@ -16,7 +16,6 @@ namespace UnitTests
             var endingTime = 10.0;
             var timeSteps = 100;
             var initialConditions = Vector<double>.Build.Dense(6, 1.0);
-            initialConditions[4] = 0.0;
             // Act
             var fermentationProfile =
                 Program.Run(initialConditions, startingTime, endingTime, timeSteps);

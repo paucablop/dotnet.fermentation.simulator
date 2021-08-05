@@ -2,6 +2,7 @@
 
 open Fermentation.Simulator.Mass.Balance
 open MathNet.Numerics.LinearAlgebra
+open MathNet.Numerics.LinearAlgebra
 open Plotly.NET
 
 module Program =
