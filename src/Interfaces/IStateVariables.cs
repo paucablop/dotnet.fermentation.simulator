@@ -1,11 +1,10 @@
 ﻿using JetBrains.Annotations;
+using MathNet.Numerics.LinearAlgebra;
 
 namespace Fermentation.Simulator.Interfaces
 {
     [PublicAPI]
-    public interface IStateVariables : ICompounds
+    public interface IStateVariables : ICompounds, IProcessConditions
     {
-        double Flowrate { get; set; }
-        double Volume { get; set; }
     }
 }

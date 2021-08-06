@@ -1,6 +1,7 @@
 ﻿using Fermentation.Simulator.Interfaces;
 using JetBrains.Annotations;
 using MathNet.Numerics.LinearAlgebra;
+using MathNet.Numerics.LinearAlgebra.Double;
 
 namespace Fermentation.Simulator.Process.Model
 {
@@ -21,11 +22,20 @@ namespace Fermentation.Simulator.Process.Model
             Biomass = stateVariablesVector[3];
             Volume = stateVariablesVector[5];
             Flowrate = Volume <= 10 ? stateVariablesVector[4] : 0.0;
-            
-
         }
-
-
-
+        public Vector<double> ToVector()
+        {
+            var variables =
+                new[]
+                {
+                    Glucose,
+                    Furfural,
+                    Ethanol,
+                    Biomass,
+                    Flowrate,
+                    Volume
+                };
+            return Vector.Build.DenseOfArray(variables);
+        }
     }
 }

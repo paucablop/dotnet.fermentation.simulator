@@ -17,11 +17,10 @@ module Calculate =
         let inletCompounds =
             stateVariables |> Inlet.CalculateCompounds
 
-        let kineticRates =
-            stateVariables
-            |> UptakeRates.Calculate
-            |> KineticRates.Calculate
-            |> (+) inletCompounds
-            |> differentialStateVariables.CompoundsFromVector
-            
+        stateVariables
+        |> UptakeRates.Calculate
+        |> KineticRates.Calculate
+        |> (+) inletCompounds
+        |> differentialStateVariables.CompoundsFromVector
+        
         differentialStateVariables.ToVector()

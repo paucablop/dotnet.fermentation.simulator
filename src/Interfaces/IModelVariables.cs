@@ -4,9 +4,8 @@ using MathNet.Numerics.LinearAlgebra;
 namespace Fermentation.Simulator.Interfaces
 {
     [PublicAPI]
-    public interface IProcessConditions: IModelVariables
+    public interface IModelVariables
     {
-        double Flowrate { get; set; }
-        double Volume { get; set; }
+        public Vector<double> ToVector();
     }
 }

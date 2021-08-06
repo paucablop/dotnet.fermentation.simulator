@@ -13,14 +13,27 @@ namespace Fermentation.Simulator.Process.Model
         public double Flowrate { get; set; }
         public double Volume { get; set; }
 
+
         public DifferentialStateVariables()
         {
-            Glucose = 0;
-            Furfural = 0;
-            Ethanol = 0;
-            Biomass = 0;
-            Flowrate = 0;
-            Volume = 0;
+            Glucose = 0.0;
+            Furfural = 0.0;
+            Ethanol = 0.0;
+            Biomass = 0.0;
+            Flowrate = 0.0;
+            Volume = 0.0;
+        }
+
+        public Vector<double> CompoundsToVector()
+        {
+            var compoundsVector = new double[]
+            {
+                this.Glucose,
+                this.Furfural,
+                this.Ethanol,
+                this.Biomass
+            };
+            return Vector.Build.DenseOfArray(compoundsVector);
         }
 
         public void FlowRateAndVolumeFromVector(Vector<double> flowRateAndVolume)
@@ -39,9 +52,17 @@ namespace Fermentation.Simulator.Process.Model
 
         public Vector<double> ToVector()
         {
-            var stateVariablesArray = new[]
-                {this.Glucose, this.Furfural, this.Ethanol, this.Biomass, this.Flowrate, this.Volume};
-            return Vector.Build.DenseOfArray(stateVariablesArray);
+            var variables =
+                new[]
+                {
+                    Glucose,
+                    Furfural,
+                    Ethanol,
+                    Biomass,
+                    Flowrate,
+                    Volume
+                };
+            return Vector.Build.DenseOfArray(variables);
         }
     }
 }

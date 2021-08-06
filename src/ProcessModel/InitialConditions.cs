@@ -1,5 +1,7 @@
 ﻿using Fermentation.Simulator.Interfaces;
 using JetBrains.Annotations;
+using MathNet.Numerics.LinearAlgebra;
+using MathNet.Numerics.LinearAlgebra.Double;
 
 namespace Fermentation.Simulator.Process.Model
 {
@@ -13,14 +15,30 @@ namespace Fermentation.Simulator.Process.Model
         public double Flowrate { get; set; }
         public double Volume { get; set; }
 
-        public InitialConditions()
+
+        public InitialConditions() 
         {
             Glucose = 1.0;
             Furfural = 1.0;
             Ethanol = 1.0;
             Biomass = 1.0;
-            Flowrate = 1.0;
+            Flowrate = 0.0;
             Volume = 1.0;
+        }
+
+        public Vector<double> ToVector()
+        {
+            var variables =
+                new[]
+                {
+                    Glucose,
+                    Furfural,
+                    Ethanol,
+                    Biomass,
+                    Flowrate,
+                    Volume
+                };
+            return Vector.Build.DenseOfArray(variables);
         }
     }
 }

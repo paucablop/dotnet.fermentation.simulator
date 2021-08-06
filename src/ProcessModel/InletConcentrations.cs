@@ -1,5 +1,7 @@
 ﻿using Fermentation.Simulator.Interfaces;
 using JetBrains.Annotations;
+using MathNet.Numerics.LinearAlgebra;
+using MathNet.Numerics.LinearAlgebra.Double;
 
 namespace Fermentation.Simulator.Process.Model
 {
@@ -18,9 +20,17 @@ namespace Fermentation.Simulator.Process.Model
             Biomass = 0.0;
         }
 
-        public void InletConcentratrionsAsVector()
+        public Vector<double> ToVector()
         {
+            var variables =
+                new[]
+                {
+                    Glucose,
+                    Furfural,
+                    Ethanol,
+                    Biomass
+                };
+            return Vector.Build.DenseOfArray(variables);
         }
-
     }
 }
