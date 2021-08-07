@@ -11,7 +11,7 @@ namespace Fermentation.Simulator.Process.Model
         public double Flowrate { get; set; }
         public double Volume { get; set; }
 
-        public ProcessConditions(float volume, float initialFlowRate)
+        public ProcessConditions()
         {
             Flowrate = 0.0;
             Volume = 10.0;

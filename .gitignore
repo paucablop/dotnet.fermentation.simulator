@@ -9,6 +9,7 @@ nupkg/
 .vscode
 
 # Rider
+*.json
 .idea
 
 # User-specific files
@@ -38,4 +39,3 @@ msbuild.wrn
 .vs/
 /src/SpectrumFileUploader.Console/spaFiles/
 /BenchmarkDotNet.Artifacts/
-

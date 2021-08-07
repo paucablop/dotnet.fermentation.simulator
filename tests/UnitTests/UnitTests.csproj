@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\MassBalance\MassBalance.fsproj" />
+    <ProjectReference Include="..\..\src\Plotting\Plotting.fsproj" />
   </ItemGroup>
 
 </Project>

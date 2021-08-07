@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <AssemblyName>Fermentation.Simulation.Plotting</AssemblyName>
+        <RootNamespace>Fermentation.Simulation.Plotting</RootNamespace>
+        <WarnOn>3390;$(WarnOn)</WarnOn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="PlotFermentation.fs" />
+        <PackageReference Include="MathNet.Numerics" Version="4.15.0" />
+        <PackageReference Include="Plotly.NET" Version="2.0.0-preview.6" />
+    </ItemGroup>
+
+</Project>
