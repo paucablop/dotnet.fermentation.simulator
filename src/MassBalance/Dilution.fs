@@ -1,16 +1,14 @@
-﻿namespace Fermentation.Simulator.Mass.Balance
+namespace Fermentation.Simulator.Mass.Balance
 
 open Fermentation.Simulator.Interfaces
 open Fermentation.Simulator.Process.Model
 open MathNet.Numerics.LinearAlgebra
 
-module Inlet =
-
+module Dilution =
     let ConcentrationDifference (compoundConcentrationTank: float, compoundConcentrationInlet: float) =
-        compoundConcentrationTank
-        - compoundConcentrationInlet
-
-    let CalculateCompounds (stateVariables: IStateVariables) =
+        compoundConcentrationInlet
+        - compoundConcentrationTank
+    let Calculate (stateVariables: IStateVariables) =
 
         let glucoseInOut =
             ConcentrationDifference(stateVariables.Glucose, InletConcentrations().Glucose)
@@ -33,9 +31,3 @@ module Inlet =
                 x * stateVariables.Flowrate
                 / stateVariables.Volume)
         |> vector
-
-    let CalculateFlowRateAndVolume (stateVariables: IStateVariables) =
-        let flowRate = 0.0
-        let volume = stateVariables.Flowrate
-
-        [| flowRate; volume |] |> vector

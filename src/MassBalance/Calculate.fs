@@ -8,18 +8,19 @@ module Calculate =
 
         let stateVariables = stateVariablesVector |> StateVariables
 
-        let flowRateAndVolume =
+        let physicalRates =
             stateVariables
-            |> Inlet.CalculateFlowRateAndVolume
+            |> PhysicalVariables.Calculate
 
-        let inletCompounds =
-            stateVariables |> Inlet.CalculateCompounds
+        let dilutions =
+            stateVariables
+            |> Dilution.Calculate
 
-        let kineticRates =
+        let chemicalRates =
             stateVariables
             |> UptakeRates.Calculate
             |> KineticRates.Calculate
-            |> (+) inletCompounds
+            |> (+) dilutions
 
-        (kineticRates, flowRateAndVolume)
+        (chemicalRates, physicalRates)
             |> stateVariables.FromVectorsToVector

@@ -1,12 +1,9 @@
 ﻿namespace Fermentation.Simulator.Mass.Balance
 
+open Fermentation.Simulator.Yeast.Anaerobic.Model
 open MathNet.Numerics.LinearAlgebra
-open Fermentation.Simulator.Process.Model
 
 module KineticRates =
-    let stoichionometricMatrix = Matrix.Build.DenseDiagonal(2, 4, -1.0)
-    stoichionometricMatrix.[0, 2] <- 0.510
-    stoichionometricMatrix.[0, 3] <- 0.490
-    
+    let stoichiometricMatrix = YieldCoefficients.StoichiometricMatrix();
     let Calculate (kineticRates: Vector<float>) =
-        stoichionometricMatrix.Transpose() * kineticRates
+        stoichiometricMatrix * kineticRates

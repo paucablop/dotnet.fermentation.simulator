@@ -21,7 +21,7 @@ namespace Fermentation.Simulator.Process.Model
             Furfural = stateVariablesVector[1];
             Ethanol = stateVariablesVector[2];
             Biomass = stateVariablesVector[3];
-            Volume = Volume < 4 ? stateVariablesVector[5] : 4;
+            Volume = stateVariablesVector[5];
             Flowrate = Volume <= 4 ? stateVariablesVector[4] : 0.0;
         }
 

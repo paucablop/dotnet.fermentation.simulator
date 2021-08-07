@@ -15,4 +15,10 @@
       <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="ProcessModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\tests\UnitTests\bin\Release\net5.0\ProcessModel.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>

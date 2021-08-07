@@ -6,7 +6,7 @@ using MathNet.Numerics.LinearAlgebra.Double;
 namespace Fermentation.Simulator.Process.Model
 {
     [PublicAPI]
-    public record InletConcentrations : ICompounds
+    public record InletConcentrations : IChemicalVariables
     {
         public double Glucose { get; set; }
         public double Furfural { get; set; }
@@ -14,8 +14,8 @@ namespace Fermentation.Simulator.Process.Model
         public double Biomass { get; set; }
         public InletConcentrations()
         {
-            Glucose = 0.5;
-            Furfural = 0.5;
+            Glucose = 4.0;
+            Furfural = 1.5;
             Ethanol = 0.0;
             Biomass = 0.0;
         }

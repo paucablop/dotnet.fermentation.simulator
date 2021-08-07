@@ -6,7 +6,6 @@ open Fermentation.Simulator.Yeast.Anaerobic.Model
 open MathNet.Numerics.LinearAlgebra
 
 module UptakeRates =
-
     let Calculate (stateVariables: IStateVariables) =
         let glucoseRate =
             UptakeModels.MonodSubstrateInhibition(stateVariables.Glucose, GlucoseMonodSubstrateInhibition())

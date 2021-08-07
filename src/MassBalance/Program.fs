@@ -2,8 +2,6 @@
 
 open Fermentation.Simulator.Mass.Balance
 open MathNet.Numerics.LinearAlgebra
-open MathNet.Numerics.LinearAlgebra
-open Plotly.NET
 
 module Program =
 
@@ -12,7 +10,4 @@ module Program =
             System.Func<float, Vector<float>, Vector<float>>
                 (fun time concentrationsVector -> Calculate.DifferentialEquations(concentrationsVector))
 
-        let fermentationProfile =
-            MathNet.Numerics.OdeSolvers.RungeKutta.FourthOrder(initialConditions, startTime, endTime, timeSteps, f)
-
-        fermentationProfile
+        MathNet.Numerics.OdeSolvers.RungeKutta.FourthOrder(initialConditions, startTime, endTime, timeSteps, f)

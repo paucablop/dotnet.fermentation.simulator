@@ -7,7 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Inlet.fs" />
+        <Compile Include="PhysicalVariablesRates.fs" />
+        <Compile Include="Dilution.fs" />
         <Compile Include="UptakeRates.fs" />
         <Compile Include="KineticRates.fs" />
         <Compile Include="Calculate.fs" />

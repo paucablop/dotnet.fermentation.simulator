@@ -4,9 +4,7 @@ using MathNet.Numerics.LinearAlgebra;
 namespace Fermentation.Simulator.Interfaces
 {
     [PublicAPI]
-    public interface IProcessConditions: IModelVariables
+    public interface IStoichiometricMatrix
     {
-        double Flowrate { get; set; }
-        double Volume { get; set; }
     }
 }

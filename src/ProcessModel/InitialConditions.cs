@@ -18,9 +18,9 @@ namespace Fermentation.Simulator.Process.Model
 
         public InitialConditions() 
         {
-            Glucose = 1.0;
+            Glucose = 4.0;
             Furfural = 1.0;
-            Ethanol = 1.0;
+            Ethanol = 0.0;
             Biomass = 1.0;
             Flowrate = 1.0;
             Volume = 1.0;

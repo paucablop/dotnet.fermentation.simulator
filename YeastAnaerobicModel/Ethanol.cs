@@ -1,5 +1,4 @@
 ﻿using Fermentation.Kinetic.Interfaces;
-using Fermentation.Kinetic.Models;
 using JetBrains.Annotations;
 
 namespace Fermentation.Simulator.Yeast.Anaerobic.Model
@@ -15,11 +14,5 @@ namespace Fermentation.Simulator.Yeast.Anaerobic.Model
             InhibitionConstant = 10.0;
             ExponentialConstant = 0.5;
         }
-
-        public double EthanolInhibitosModel(double glucoseConcentration)
-        {
-            return Inhibition.SuddenInhibition(glucoseConcentration, InhibitionConstant, ExponentialConstant);
-        }
-
     }
 }
