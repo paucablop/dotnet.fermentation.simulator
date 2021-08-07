@@ -20,7 +20,6 @@ namespace UnitTests
             // Act
             var fermentationProfile =
                 Program.Run(initialConditions, startingTime, endingTime, timeSteps);
-            PlotFermentation.Plot(fermentationProfile);
             // Assert
             fermentationProfile[0][0].Should().Be(1.0);
             fermentationProfile[80][2].Should().BeApproximately( 1.509982539693151, 1e-3);
