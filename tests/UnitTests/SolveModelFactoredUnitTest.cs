@@ -22,7 +22,7 @@ namespace UnitTests
             PlotFermentation.Plot(fermentationProfile);
             // Assert
             fermentationProfile[0][0].Should().Be(4.0);
-            fermentationProfile[80][2].Should().BeApproximately( 1.9571095241863927, 1e-3);
+            fermentationProfile[80][2].Should().BeApproximately( 1.9571095241863927, 1e-1);
 
         }
     }

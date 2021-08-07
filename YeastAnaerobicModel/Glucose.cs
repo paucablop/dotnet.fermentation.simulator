@@ -7,9 +7,9 @@ namespace Fermentation.Simulator.Yeast.Anaerobic.Model
     [PublicAPI]
     public record GlucoseMonodSubstrateInhibition : IMonodInhibition
     {
-        public double MaxUptakeRate { get; init; }
-        public double AffinityConstant { get; init; }
-        public double InhibitionConstant { get; init; }
+        public double MaxUptakeRate { get; set; }
+        public double AffinityConstant { get; set; }
+        public double InhibitionConstant { get; set; }
 
         public GlucoseMonodSubstrateInhibition()
         {
