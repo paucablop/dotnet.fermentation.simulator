@@ -1,5 +1,6 @@
 ﻿using Fermentation.Kinetic.Interfaces;
 using JetBrains.Annotations;
+using MathNet.Numerics.Distributions;
 
 namespace Fermentation.Simulator.Yeast.Anaerobic.Model
 {
@@ -9,10 +10,19 @@ namespace Fermentation.Simulator.Yeast.Anaerobic.Model
         public double MaxUptakeRate { get; set; }
         public double AffinityConstant { get; set; }
 
-        public FurfuralMonod()
+        public FurfuralMonod(bool randomize)
         {
-            MaxUptakeRate = 0.01;
-            AffinityConstant = 2.0;
+            if (!randomize)
+            {
+                MaxUptakeRate = 0.01;
+                AffinityConstant = 2.0;
+            }
+            else
+            {
+                MaxUptakeRate = Normal.Sample(0.01, 0.001);
+                AffinityConstant = Normal.Sample(2.0, 0.2);
+            }
+
         }
     }
 
@@ -21,9 +31,9 @@ namespace Fermentation.Simulator.Yeast.Anaerobic.Model
     {
         public double InhibitionConstant { get; set; }
 
-        public FurfuralInhibition()
+        public FurfuralInhibition(bool randomize)
         {
-            InhibitionConstant = 5.0;
+            InhibitionConstant = !randomize ? 5.0 : Normal.Sample(5.0, 0.5);
         }
     }
 }
