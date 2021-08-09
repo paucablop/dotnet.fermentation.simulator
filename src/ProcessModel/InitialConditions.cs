@@ -16,13 +16,13 @@ namespace Fermentation.Simulator.Process.Model
         public double Volume { get; set; }
 
 
-        public InitialConditions() 
+        public InitialConditions()
         {
             Glucose = 40.0;
             Furfural = 1.0;
             Ethanol = 1.0;
             Biomass = 1.0;
-            Flowrate = 1.0;
+            Flowrate = 0.5;
             Volume = 1.0;
         }
 

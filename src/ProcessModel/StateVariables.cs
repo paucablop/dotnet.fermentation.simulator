@@ -22,7 +22,7 @@ namespace Fermentation.Simulator.Process.Model
             Ethanol = stateVariablesVector[2];
             Biomass = stateVariablesVector[3];
             Volume = stateVariablesVector[5];
-            Flowrate = Volume <= 4 ? stateVariablesVector[4] : 0.0;
+            Flowrate = Volume <= 10 ? stateVariablesVector[4] : 0.0;
         }
 
         public Vector<double> ToVector()
