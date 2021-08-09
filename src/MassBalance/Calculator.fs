@@ -3,8 +3,8 @@
 open Fermentation.Simulator.Process.Model
 open MathNet.Numerics.LinearAlgebra
 
-module Calculate =
-    let DifferentialEquations (stateVariablesVector: Vector<float>) =
+module Calculator =
+    let StateVariable (stateVariablesVector: Vector<float>) =
 
         let stateVariables = stateVariablesVector |> StateVariables
 

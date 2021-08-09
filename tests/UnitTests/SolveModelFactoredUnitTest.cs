@@ -18,11 +18,11 @@ namespace UnitTests
             var initialConditions = new InitialConditions().ToVector();
             // Act
             var fermentationProfile =
-                Program.Run(initialConditions, startingTime, endingTime, timeSteps);
+                Simulator.Run(initialConditions, startingTime, endingTime, timeSteps);
             PlotFermentation.Plot(fermentationProfile);
             // Assert
-            fermentationProfile[0][0].Should().Be(4.0);
-            fermentationProfile[80][2].Should().BeApproximately( 1.9571095241863927, 1e-1);
+            fermentationProfile[0][0].Should().Be(40.0);
+            fermentationProfile[80][2].Should().BeApproximately( 19.998609617882803, 1e-1);
 
         }
     }

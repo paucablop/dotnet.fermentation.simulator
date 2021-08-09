@@ -19,8 +19,8 @@ namespace Fermentation.Simulator.Yeast.Anaerobic.Model
             }
             else
             {
-                MaxUptakeRate = Normal.Sample(0.01, 0.001);
-                AffinityConstant = Normal.Sample(2.0, 0.2);
+                MaxUptakeRate = Normal.Sample(0.01, 0.0001);
+                AffinityConstant = Normal.Sample(2.0, 0.02);
             }
 
         }

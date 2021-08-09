@@ -1,4 +1,3 @@
-using Fermentation.Simulator.Interfaces;
 using JetBrains.Annotations;
 using MathNet.Numerics.Distributions;
 using MathNet.Numerics.LinearAlgebra;
@@ -17,15 +16,21 @@ namespace Fermentation.Simulator.Yeast.Anaerobic.Model
             var stoichiometricMatrix = Matrix.Build.DenseDiagonal(2, 4, -1.0);
             if (!randomize)
             {
-                stoichiometricMatrix[0, 2] = _glucoseEthanol + 1 - LogNormal.Sample(0.01, 0.01);
-                stoichiometricMatrix[0, 3] = _glucoseBiomass + 1 - LogNormal.Sample(0.01, 0.01);
+                stoichiometricMatrix[0, 2] = _glucoseEthanol;
+                stoichiometricMatrix[0, 3] = _glucoseBiomass;
             }
             else
             {
-                stoichiometricMatrix[0, 2] = Normal.Sample(_glucoseEthanol,0.005);
-                stoichiometricMatrix[0, 3] = Normal.Sample(_glucoseBiomass, 0.005);
+                stoichiometricMatrix[0, 2] = _glucoseEthanol + CalculateLogNormalDistributionFactor();
+                stoichiometricMatrix[0, 3] = _glucoseBiomass + CalculateLogNormalDistributionFactor();
             }
+
             return stoichiometricMatrix.Transpose();
+        }
+
+        private static double CalculateLogNormalDistributionFactor()
+        {
+            return (1 - LogNormal.Sample(0.01, 0.01));
         }
     }
 }

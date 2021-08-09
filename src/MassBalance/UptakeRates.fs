@@ -8,13 +8,13 @@ open MathNet.Numerics.LinearAlgebra
 
 module UptakeRates =
     let private ethanolInhibitionConstants =
-        EthanolInhibition(randomize=false)
+        EthanolInhibition(randomize=true)
     let private furfuralInhibitionConstants =
-        FurfuralInhibition(randomize=false)
+        FurfuralInhibition(randomize=true)
     let private glucoseMonodUptake =
-        GlucoseMonodSubstrateInhibition()
+        GlucoseMonodSubstrateInhibition(randomize=true)
     let private furfuralMonodUptake =
-        FurfuralMonod(randomize=false)
+        FurfuralMonod(randomize=true)
 
     let Calculate (stateVariables: IStateVariables) =
         let glucoseRate =

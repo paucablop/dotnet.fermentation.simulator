@@ -3,11 +3,11 @@
 open Fermentation.Simulator.Mass.Balance
 open MathNet.Numerics.LinearAlgebra
 
-module Program =
+module Simulator =
 
     let Run (initialConditions: Vector<float>, startTime: float, endTime: float, timeSteps: int) =
         let f =
             System.Func<float, Vector<float>, Vector<float>>
-                (fun time concentrationsVector -> Calculate.DifferentialEquations(concentrationsVector))
+                (fun time concentrationsVector -> Calculator.StateVariable(concentrationsVector))
 
         MathNet.Numerics.OdeSolvers.RungeKutta.FourthOrder(initialConditions, startTime, endTime, timeSteps, f)

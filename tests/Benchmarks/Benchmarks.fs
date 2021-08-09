@@ -27,7 +27,7 @@ type Benchmarks () =
         
     [<Benchmark>]
     member this.ProgramSolve() =
-        Program.Run(initialConditions, startTime, endTime, timeSteps)
+        Simulator.Run(initialConditions, startTime, endTime, timeSteps)
         
 
 
