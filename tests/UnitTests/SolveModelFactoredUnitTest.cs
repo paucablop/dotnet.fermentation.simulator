@@ -13,7 +13,7 @@ namespace UnitTests
         {
             // Arrange
             var startingTime = 0.0;
-            var endingTime = 60.0;
+            var endingTime = 100.0;
             var timeSteps = 100;
             var initialConditions = new InitialConditions().ToVector();
             // Act

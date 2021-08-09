@@ -14,7 +14,7 @@ namespace Fermentation.Simulator.Process.Model
         public double Biomass { get; set; }
         public InletConcentrations()
         {
-            Glucose = 4.0;
+            Glucose = 40.0;
             Furfural = 1.5;
             Ethanol = 0.0;
             Biomass = 0.0;

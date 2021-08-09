@@ -7,14 +7,23 @@ open Fermentation.Simulator.Yeast.Anaerobic.Model
 open MathNet.Numerics.LinearAlgebra
 
 module UptakeRates =
+    let private ethanolInhibitionConstants =
+        EthanolInhibition(randomize=false)
+    let private furfuralInhibitionConstants =
+        FurfuralInhibition(randomize=false)
+    let private glucoseMonodUptake =
+        GlucoseMonodSubstrateInhibition()
+    let private furfuralMonodUptake =
+        FurfuralMonod(randomize=false)
+
     let Calculate (stateVariables: IStateVariables) =
         let glucoseRate =
-            UptakeModels.MonodSubstrateInhibition(stateVariables.Glucose, GlucoseMonodSubstrateInhibition())
-            * Inhibition.SuddenInhibition(stateVariables.Ethanol, EthanolInhibition(randomize=false))
-            * Inhibition.InverseInhibition(stateVariables.Furfural, FurfuralInhibition(randomize=false))
+            UptakeModels.MonodSubstrateInhibition(stateVariables.Glucose, glucoseMonodUptake)
+            * Inhibition.SuddenInhibition(stateVariables.Ethanol, ethanolInhibitionConstants)
+            * Inhibition.InverseInhibition(stateVariables.Furfural, furfuralInhibitionConstants)
 
         let furfuralRate =
-            UptakeModels.Monod(stateVariables.Furfural, FurfuralMonod(randomize=false))
+            UptakeModels.Monod(stateVariables.Furfural, furfuralMonodUptake)
 
         [| glucoseRate; furfuralRate |]
         |> Array.map (fun x -> x * stateVariables.Biomass)

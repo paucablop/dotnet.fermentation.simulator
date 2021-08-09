@@ -15,7 +15,7 @@ namespace Fermentation.Simulator.Yeast.Anaerobic.Model
         {
             MaxUptakeRate = 1.0;
             AffinityConstant = 0.5;
-            InhibitionConstant = 0.5;
+            InhibitionConstant = 100.0;
         }
     }
 }

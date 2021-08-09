@@ -17,13 +17,13 @@ namespace Fermentation.Simulator.Yeast.Anaerobic.Model
             var stoichiometricMatrix = Matrix.Build.DenseDiagonal(2, 4, -1.0);
             if (!randomize)
             {
-                stoichiometricMatrix[0, 2] = _glucoseEthanol;
-                stoichiometricMatrix[0, 3] = _glucoseBiomass;
+                stoichiometricMatrix[0, 2] = _glucoseEthanol + 1 - LogNormal.Sample(0.01, 0.05);
+                stoichiometricMatrix[0, 3] = _glucoseBiomass + 1 - LogNormal.Sample(0.01, 0.05);
             }
             else
             {
-                stoichiometricMatrix[0, 2] = Pareto.Sample(_glucoseEthanol, 0.99);
-                stoichiometricMatrix[0, 3] = Pareto.Sample(_glucoseBiomass, 0.99);
+                stoichiometricMatrix[0, 2] = Normal.Sample(_glucoseEthanol,0.005);
+                stoichiometricMatrix[0, 3] = Normal.Sample(_glucoseBiomass, 0.005);
             }
             return stoichiometricMatrix.Transpose();
         }

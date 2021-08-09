@@ -15,12 +15,12 @@ namespace Fermentation.Simulator.Yeast.Anaerobic.Model
         {
             if (!randomize)
             {
-                InhibitionConstant = 10.0;
+                InhibitionConstant = 20.0;
                 ExponentialConstant = 0.5;
             }
             else
             {
-                InhibitionConstant = Normal.Sample(10.0, 0.5);
+                InhibitionConstant = Normal.Sample(20.0, 1.0);
                 ExponentialConstant = Normal.Sample(0.5, 0.05);
             }
         }
