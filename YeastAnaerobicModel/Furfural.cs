@@ -1,39 +1,40 @@
 ﻿using Fermentation.Kinetic.Interfaces;
+using Fermentation.Kinetic.Models;
 using JetBrains.Annotations;
 using MathNet.Numerics.Distributions;
 
 namespace Fermentation.Simulator.Yeast.Anaerobic.Model
 {
     [PublicAPI]
-    public record FurfuralMonod : IMonod
+    public record FurfuralUptake : IMonod
     {
         public double MaxUptakeRate { get; set; }
         public double AffinityConstant { get; set; }
-
-        public FurfuralMonod(bool randomize)
+        
+        public FurfuralUptake()
         {
-            if (!randomize)
-            {
-                MaxUptakeRate = 0.01;
-                AffinityConstant = 2.0;
-            }
-            else
-            {
-                MaxUptakeRate = Normal.Sample(0.01, 0.0001);
-                AffinityConstant = Normal.Sample(2.0, 0.02);
-            }
-
+            MaxUptakeRate = Normal.Sample(0.01, 0.0001);
+            AffinityConstant = Normal.Sample(2.0, 0.02);
+        }
+        public double Calculate(double furfuralConcentration)
+        {
+            return UptakeModels.Monod(furfuralConcentration, MaxUptakeRate, AffinityConstant);
         }
     }
 
     [PublicAPI]
-    public record FurfuralInhibition : IInverseInhibition
+    public record FurfuralInhibitsGlucose : IInverseInhibition
     {
         public double InhibitionConstant { get; set; }
 
-        public FurfuralInhibition(bool randomize)
+        public FurfuralInhibitsGlucose()
         {
-            InhibitionConstant = !randomize ? 5.0 : Normal.Sample(5.0, 0.5);
+            InhibitionConstant = Normal.Sample(5.0, 0.05);
         }
+
+        public double Calculate(double furfuralConcentration)
+        {
+            return Inhibition.InverseInhibition(furfuralConcentration, InhibitionConstant);
+        }     
     }
 }
