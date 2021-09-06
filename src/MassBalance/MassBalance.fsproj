@@ -22,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Fermentation.Kinetic.Models" Version="2.0.2" />
+      <PackageReference Include="Fermentation.Kinetic.Models" Version="2.0.3" />
       <PackageReference Include="MathNet.Numerics.FSharp" Version="4.15.0" />
       <PackageReference Include="Plotly.NET" Version="2.0.0-preview.6" />
     </ItemGroup>

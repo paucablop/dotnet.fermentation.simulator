@@ -8,6 +8,6 @@ module Simulator =
     let Run (initialConditions: Vector<float>, startTime: float, endTime: float, timeSteps: int) =
         let f =
             System.Func<float, Vector<float>, Vector<float>>
-                (fun time concentrationsVector -> Calculator.StateVariable(concentrationsVector))
+                (fun time -> Calculator.StateVariable)
 
         MathNet.Numerics.OdeSolvers.RungeKutta.FourthOrder(initialConditions, startTime, endTime, timeSteps, f)

@@ -13,8 +13,8 @@ namespace Fermentation.Simulator.Yeast.Anaerobic.Model
         
         public FurfuralUptake()
         {
-            MaxUptakeRate = Normal.Sample(0.01, 0.0001);
-            AffinityConstant = Normal.Sample(2.0, 0.02);
+            MaxUptakeRate = 0.01;
+            AffinityConstant = 2.0;
         }
         public double Calculate(double furfuralConcentration)
         {
@@ -29,7 +29,7 @@ namespace Fermentation.Simulator.Yeast.Anaerobic.Model
 
         public FurfuralInhibitsGlucose()
         {
-            InhibitionConstant = Normal.Sample(5.0, 0.05);
+            InhibitionConstant = 5.0;
         }
 
         public double Calculate(double furfuralConcentration)

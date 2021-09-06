@@ -10,7 +10,7 @@ module Calculator =
 
         let physicalRates =
             stateVariables
-            |> PhysicalVariables.Calculate
+            |> PhysicalVariablesRates.Calculate
 
         let dilutions =
             stateVariables
@@ -23,4 +23,4 @@ module Calculator =
             |> (+) dilutions
 
         (chemicalRates, physicalRates)
-            |> stateVariables.FromVectorsToVector
+            |> stateVariables.AppendVectors

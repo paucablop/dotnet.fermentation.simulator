@@ -9,38 +9,37 @@ namespace Fermentation.Simulator.Process.Model
     public class StateVariables : IStateVariables
     {
         public double Glucose { get; set; }
+        public double Xylose { get; set; }
         public double Furfural { get; set; }
         public double Ethanol { get; set; }
         public double Biomass { get; set; }
         public double Flowrate { get; set; }
         public double Volume { get; set; }
-
+        
         public StateVariables(Vector<double> stateVariablesVector)
         {
             Glucose = stateVariablesVector[0];
-            Furfural = stateVariablesVector[1];
-            Ethanol = stateVariablesVector[2];
-            Biomass = stateVariablesVector[3];
-            Volume = stateVariablesVector[5];
-            Flowrate = Volume <= 10 ? stateVariablesVector[4] : 0.0;
+            Ethanol = stateVariablesVector[1];
+            Biomass = stateVariablesVector[2];
+            Volume = stateVariablesVector[4];
+            Flowrate = Volume <= 10 ? stateVariablesVector[3] : 0.0;
         }
 
         public Vector<double> ToVector()
         {
-            var variables =
+            var stateVariables =
                 new[]
                 {
                     Glucose,
-                    Furfural,
                     Ethanol,
                     Biomass,
                     Flowrate,
                     Volume
                 };
-            return Vector.Build.DenseOfArray(variables);
+            return Vector.Build.DenseOfArray(stateVariables);
         }
 
-        public Vector<double> FromVectorsToVector(Vector<double> compounds, Vector<double> flowrateAndVolume)
+        public Vector<double> AppendVectors(Vector<double> compounds, Vector<double> flowrateAndVolume)
         {
             var variables =
                 new[]
@@ -48,7 +47,6 @@ namespace Fermentation.Simulator.Process.Model
                     compounds[0],
                     compounds[1],
                     compounds[2],
-                    compounds[3],
                     flowrateAndVolume[0],
                     flowrateAndVolume[1]
                 };

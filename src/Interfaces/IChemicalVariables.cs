@@ -6,6 +6,7 @@ namespace Fermentation.Simulator.Interfaces
     public interface IChemicalVariables: IModelVariables
     {
         double Glucose { get; set; }
+        double Xylose { get; set; }
         double Furfural { get; set; }
         double Ethanol { get; set; }
         double Biomass { get; set; }

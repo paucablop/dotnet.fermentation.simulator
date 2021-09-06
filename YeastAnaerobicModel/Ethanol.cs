@@ -13,8 +13,8 @@ namespace Fermentation.Simulator.Yeast.Anaerobic.Model
 
         public EthanolInhibitsGluocse()
         {
-            InhibitionConstant = Normal.Sample(20.0, 0.2);
-            ExponentialConstant = Normal.Sample(0.5, 0.005);
+            InhibitionConstant = 20.0;
+            ExponentialConstant = 0.5;
         }
 
         public double Calculate(double ethanolConcentration)

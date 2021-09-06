@@ -10,14 +10,15 @@ namespace Fermentation.Simulator.Yeast.Anaerobic.Model
     {
         private static double _glucoseEthanol = 0.51;
         private static double _glucoseBiomass = 0.49;
+        private static double _xyloseEthanol = 0.30;
+        private static double _xyloseBiomass = 0.15;
 
         public static Matrix<double> StoichiometricMatrix()
         {
-            var stoichiometricMatrix = Matrix.Build.DenseDiagonal(2, 4, -1.0);
-
-                stoichiometricMatrix[0, 2] = _glucoseEthanol + CalculateLogNormalDistributionFactor();
-                stoichiometricMatrix[0, 3] = _glucoseBiomass + CalculateLogNormalDistributionFactor();
-                return stoichiometricMatrix.Transpose();
+            var stoichiometricMatrix = Matrix.Build.DenseDiagonal(3, 1, -1.0);
+                stoichiometricMatrix[1, 0] = _glucoseEthanol;
+                stoichiometricMatrix[2, 0] = _glucoseBiomass;
+                return stoichiometricMatrix;
         }
 
         private static double CalculateLogNormalDistributionFactor()

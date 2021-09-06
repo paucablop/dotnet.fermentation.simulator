@@ -9,17 +9,16 @@ namespace Fermentation.Simulator.Process.Model
     public class InitialConditions : IStateVariables
     {
         public double Glucose { get; set; }
+        public double Xylose { get; set;  }
         public double Furfural { get; set; }
         public double Ethanol { get; set; }
         public double Biomass { get; set; }
         public double Flowrate { get; set; }
         public double Volume { get; set; }
-
-
+        
         public InitialConditions()
         {
             Glucose = 40.0;
-            Furfural = 1.0;
             Ethanol = 1.0;
             Biomass = 1.0;
             Flowrate = 0.5;
@@ -32,7 +31,6 @@ namespace Fermentation.Simulator.Process.Model
                 new[]
                 {
                     Glucose,
-                    Furfural,
                     Ethanol,
                     Biomass,
                     Flowrate,

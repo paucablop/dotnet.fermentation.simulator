@@ -12,14 +12,16 @@ namespace UnitTests
         public void TestFSharpOdeSolution()
         {
             // Arrange
-            var startingTime = 0.0;
-            var endingTime = 100.0;
-            var timeSteps = 100;
+            var startTime = 0.0;
+            var endTime = 40.0;
+            var timeSteps = 10000;
             var initialConditions = new InitialConditions().ToVector();
+            
             // Act
             var fermentationProfile =
-                Simulator.Run(initialConditions, startingTime, endingTime, timeSteps);
-            PlotFermentation.Plot(fermentationProfile);
+                Simulator.Run(initialConditions, startTime, endTime, timeSteps);
+            PlotFermentation.Plot(fermentationProfile, startTime, endTime);
+            
             // Assert
             fermentationProfile[0][0].Should().Be(40.0);
             fermentationProfile[80][2].Should().BeApproximately( 19.998609617882803, 5e-1);

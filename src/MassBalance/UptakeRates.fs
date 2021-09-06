@@ -2,27 +2,21 @@
 
 open Fermentation.Simulator.Interfaces
 open Fermentation.Simulator.Yeast.Anaerobic.Model
+open Fermentation.Simulator.Yeast.Anaerobic.Model
 open MathNet.Numerics.LinearAlgebra
 
 module UptakeRates =
+    let private glucoseUptake =
+        GlucoseUptake() 
     let private ethanolInhibitsGluocse =
         EthanolInhibitsGluocse()
-    let private furfuralInhibitsGlucose =
-        FurfuralInhibitsGlucose()
-    let private glucoseUptake =
-        GlucoseUptake()
-    let private furfuralUptake =
-        FurfuralUptake()
 
     let Calculate (stateVariables: IStateVariables) =
         let glucoseRate =
-            glucoseUptake.Calculate(stateVariables.Glucose)
-            * ethanolInhibitsGluocse.Calculate(stateVariables.Ethanol)
-            * furfuralInhibitsGlucose.Calculate(stateVariables.Furfural)
+            glucoseUptake.Calculate(stateVariables.Glucose) *
+            ethanolInhibitsGluocse.Calculate(stateVariables.Ethanol)
 
-        let furfuralRate =
-            furfuralUptake.Calculate(stateVariables.Glucose)
             
-        [| glucoseRate; furfuralRate |]
+        [| glucoseRate |]
         |> Array.map (fun x -> x * stateVariables.Biomass)
         |> vector
