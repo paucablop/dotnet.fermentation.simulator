@@ -1,28 +1,27 @@
 ﻿using Fermentation.Kinetic.Interfaces;
 using Fermentation.Kinetic.Models;
 using JetBrains.Annotations;
-using MathNet.Numerics.Distributions;
 
-namespace Fermentation.Simulator.Yeast.Anaerobic.Model
+namespace Fermentation.Simulator.Yeast.Anaerobic.Model.KineticRates
 
 {
     [PublicAPI]
-    public record GlucoseUptake : IMonodInhibition
+    public record XyloseUptake : IMonodInhibition
     {
         public double MaxUptakeRate { get; set; }
         public double AffinityConstant { get; set; }
         public double InhibitionConstant { get; set; }
 
-        public GlucoseUptake()
+        public XyloseUptake()
         {
             MaxUptakeRate = 1.0;
             AffinityConstant = 0.5;
             InhibitionConstant = 100;
         }
 
-        public double Calculate(double glucoseConcentration)
+        public double Calculate(double xyloseConcentration)
         {
-            return UptakeModels.MonodSubstrateInhibition(glucoseConcentration, MaxUptakeRate, AffinityConstant,
+            return UptakeModels.MonodSubstrateInhibition(xyloseConcentration, MaxUptakeRate, AffinityConstant,
                 InhibitionConstant);
         }
     }

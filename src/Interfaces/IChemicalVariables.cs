@@ -1,14 +1,11 @@
 ﻿using JetBrains.Annotations;
+using MathNet.Numerics.LinearAlgebra;
 
 namespace Fermentation.Simulator.Interfaces
 {
     [PublicAPI]
-    public interface IChemicalVariables: IModelVariables
+    public interface IChemicalVariables : IIndependentChemicalVariables, IDependentChemicalVariables
     {
-        double Glucose { get; set; }
-        double Xylose { get; set; }
-        double Furfural { get; set; }
-        double Ethanol { get; set; }
-        double Biomass { get; set; }
+        public Vector<double> ChemicalVariablesVector();
     }
 }

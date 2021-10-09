@@ -1,7 +1,6 @@
 ﻿using Fermentation.Kinetic.Interfaces;
 using Fermentation.Kinetic.Models;
 using JetBrains.Annotations;
-using MathNet.Numerics.Distributions;
 
 namespace Fermentation.Simulator.Yeast.Anaerobic.Model
 {

@@ -2,8 +2,6 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>Fermentation.Simulator.Process.Model</RootNamespace>
-        <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -12,6 +10,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
-      <ProjectReference Include="..\YeastAnaerobicModel\YeastAnaerobicModel.csproj" />
     </ItemGroup>
+
 </Project>

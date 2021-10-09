@@ -4,8 +4,8 @@ using MathNet.Numerics.LinearAlgebra;
 namespace Fermentation.Simulator.Interfaces
 {
     [PublicAPI]
-    public interface IStateVariables : IChemicalVariables, IProcessVariables
+    public interface IStoichiometricMatrix
     {
-        public Vector<double> StateVariablesVector();
+        Matrix<double> StoichiometricMatrix { get; set; }
     }
 }

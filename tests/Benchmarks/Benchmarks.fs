@@ -2,7 +2,6 @@
 
 open BenchmarkDotNet.Attributes
 open Fermentation.Simulator.Mass.Balance
-open Fermentation.Simulator.Process.Model
 open MathNet.Numerics.LinearAlgebra
 
 [<MemoryDiagnoser>]

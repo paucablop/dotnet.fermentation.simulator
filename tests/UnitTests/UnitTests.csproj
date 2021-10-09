@@ -25,6 +25,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\MassBalance\MassBalance.fsproj" />
     <ProjectReference Include="..\..\src\Plotting\Plotting.fsproj" />
+    <ProjectReference Include="..\..\src\Simulator\Simulator.fsproj" />
   </ItemGroup>
 
 </Project>

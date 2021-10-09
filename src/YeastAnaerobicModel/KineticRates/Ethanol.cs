@@ -1,7 +1,6 @@
 ﻿using Fermentation.Kinetic.Interfaces;
 using Fermentation.Kinetic.Models;
 using JetBrains.Annotations;
-using MathNet.Numerics.Distributions;
 
 namespace Fermentation.Simulator.Yeast.Anaerobic.Model
 {
@@ -13,7 +12,7 @@ namespace Fermentation.Simulator.Yeast.Anaerobic.Model
 
         public EthanolInhibitsGluocse()
         {
-            InhibitionConstant = 20.0;
+            InhibitionConstant = 100.0;
             ExponentialConstant = 0.5;
         }
 

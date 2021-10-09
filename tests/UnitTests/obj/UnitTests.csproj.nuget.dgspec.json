@@ -1,31 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\fermentation.simulator\\tests\\UnitTests\\UnitTests.csproj": {}
+    "C:\\git\\home\\fermentation.simulator\\tests\\UnitTests\\UnitTests.csproj": {}
   },
   "projects": {
-    "C:\\dev\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj": {
+    "C:\\git\\home\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj",
+        "projectUniqueName": "C:\\git\\home\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj",
         "projectName": "Interfaces",
-        "projectPath": "C:\\dev\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj",
+        "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj",
         "packagesPath": "C:\\Users\\PauCabaneros\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\fermentation.simulator\\src\\Interfaces\\obj\\",
+        "outputPath": "C:\\git\\home\\fermentation.simulator\\src\\Interfaces\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PauCabaneros\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.1"
+          "net5.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {},
-          "https://internal.nexus.specshell.systems/repository/nuget-hosted/": {}
+          "https://internal.nexus.specshell.systems/repository/nuget-hosted": {}
         },
         "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -36,9 +36,13 @@
         }
       },
       "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
+            "Fermentation.Kinetic.Interfaces": {
+              "target": "Package",
+              "version": "[2.0.5, )"
+            },
             "JetBrains.Annotations": {
               "target": "Package",
               "version": "[2021.2.0, )"
@@ -59,22 +63,22 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "NETStandard.Library": {
+            "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\dev\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj": {
+    "C:\\git\\home\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj",
+        "projectUniqueName": "C:\\git\\home\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj",
         "projectName": "MassBalance",
-        "projectPath": "C:\\dev\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj",
+        "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj",
         "packagesPath": "C:\\Users\\PauCabaneros\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\fermentation.simulator\\src\\MassBalance\\obj\\",
+        "outputPath": "C:\\git\\home\\fermentation.simulator\\src\\MassBalance\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PauCabaneros\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -84,20 +88,20 @@
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {},
-          "https://internal.nexus.specshell.systems/repository/nuget-hosted/": {}
+          "https://internal.nexus.specshell.systems/repository/nuget-hosted": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\dev\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj": {
-                "projectPath": "C:\\dev\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj"
+              "C:\\git\\home\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj": {
+                "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj"
               },
-              "C:\\dev\\fermentation.simulator\\src\\ProcessModel\\ProcessModel.csproj": {
-                "projectPath": "C:\\dev\\fermentation.simulator\\src\\ProcessModel\\ProcessModel.csproj"
+              "C:\\git\\home\\fermentation.simulator\\src\\ProcessModel\\ProcessModel.csproj": {
+                "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\ProcessModel\\ProcessModel.csproj"
               },
-              "C:\\dev\\fermentation.simulator\\YeastAnaerobicModel\\YeastAnaerobicModel.csproj": {
-                "projectPath": "C:\\dev\\fermentation.simulator\\YeastAnaerobicModel\\YeastAnaerobicModel.csproj"
+              "C:\\git\\home\\fermentation.simulator\\src\\Variables\\Variables.csproj": {
+                "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\Variables\\Variables.csproj"
               }
             }
           }
@@ -108,16 +112,88 @@
           "targetAlias": "net5.0",
           "dependencies": {
             "FSharp.Core": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
               "version": "[5.0.0, )",
               "generatePathProperty": true
             },
             "Fermentation.Kinetic.Models": {
               "target": "Package",
-              "version": "[2.0.1, )",
+              "version": "[2.0.3, )",
               "generatePathProperty": true
             },
             "MathNet.Numerics.FSharp": {
+              "target": "Package",
+              "version": "[4.15.0, )",
+              "generatePathProperty": true
+            },
+            "Plotly.NET": {
+              "target": "Package",
+              "version": "[2.0.0-preview.6, )",
+              "generatePathProperty": true
+            },
+            "VectorOperations": {
+              "target": "Package",
+              "version": "[1.0.0, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\git\\home\\fermentation.simulator\\src\\Plotting\\Plotting.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\git\\home\\fermentation.simulator\\src\\Plotting\\Plotting.fsproj",
+        "projectName": "Fermentation.Simulation.Plotting",
+        "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\Plotting\\Plotting.fsproj",
+        "packagesPath": "C:\\Users\\PauCabaneros\\.nuget\\packages\\",
+        "outputPath": "C:\\git\\home\\fermentation.simulator\\src\\Plotting\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PauCabaneros\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://internal.nexus.specshell.systems/repository/nuget-hosted": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FSharp.Core": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[5.0.0, )",
+              "generatePathProperty": true
+            },
+            "MathNet.Numerics": {
               "target": "Package",
               "version": "[4.15.0, )",
               "generatePathProperty": true
@@ -143,35 +219,38 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\dev\\fermentation.simulator\\src\\ProcessModel\\ProcessModel.csproj": {
+    "C:\\git\\home\\fermentation.simulator\\src\\ProcessModel\\ProcessModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\fermentation.simulator\\src\\ProcessModel\\ProcessModel.csproj",
+        "projectUniqueName": "C:\\git\\home\\fermentation.simulator\\src\\ProcessModel\\ProcessModel.csproj",
         "projectName": "ProcessModel",
-        "projectPath": "C:\\dev\\fermentation.simulator\\src\\ProcessModel\\ProcessModel.csproj",
+        "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\ProcessModel\\ProcessModel.csproj",
         "packagesPath": "C:\\Users\\PauCabaneros\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\fermentation.simulator\\src\\ProcessModel\\obj\\",
+        "outputPath": "C:\\git\\home\\fermentation.simulator\\src\\ProcessModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PauCabaneros\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.1"
+          "net5.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {},
-          "https://internal.nexus.specshell.systems/repository/nuget-hosted/": {}
+          "https://internal.nexus.specshell.systems/repository/nuget-hosted": {}
         },
         "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\dev\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj": {
-                "projectPath": "C:\\dev\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj"
+              "C:\\git\\home\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj": {
+                "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj"
+              },
+              "C:\\git\\home\\fermentation.simulator\\src\\YeastAnaerobicModel\\YeastAnaerobicModel.csproj": {
+                "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\YeastAnaerobicModel\\YeastAnaerobicModel.csproj"
               }
             }
           }
@@ -183,8 +262,8 @@
         }
       },
       "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "JetBrains.Annotations": {
               "target": "Package",
@@ -202,22 +281,22 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "NETStandard.Library": {
+            "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\dev\\fermentation.simulator\\tests\\UnitTests\\UnitTests.csproj": {
+    "C:\\git\\home\\fermentation.simulator\\src\\Simulator\\Simulator.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\fermentation.simulator\\tests\\UnitTests\\UnitTests.csproj",
-        "projectName": "UnitTests",
-        "projectPath": "C:\\dev\\fermentation.simulator\\tests\\UnitTests\\UnitTests.csproj",
+        "projectUniqueName": "C:\\git\\home\\fermentation.simulator\\src\\Simulator\\Simulator.fsproj",
+        "projectName": "Simulator",
+        "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\Simulator\\Simulator.fsproj",
         "packagesPath": "C:\\Users\\PauCabaneros\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\fermentation.simulator\\tests\\UnitTests\\obj\\",
+        "outputPath": "C:\\git\\home\\fermentation.simulator\\src\\Simulator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PauCabaneros\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -227,14 +306,210 @@
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {},
-          "https://internal.nexus.specshell.systems/repository/nuget-hosted/": {}
+          "https://internal.nexus.specshell.systems/repository/nuget-hosted": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\dev\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj": {
-                "projectPath": "C:\\dev\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj"
+              "C:\\git\\home\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj": {
+                "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FSharp.Core": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[5.0.0, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\git\\home\\fermentation.simulator\\src\\Variables\\Variables.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\git\\home\\fermentation.simulator\\src\\Variables\\Variables.csproj",
+        "projectName": "Variables",
+        "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\Variables\\Variables.csproj",
+        "packagesPath": "C:\\Users\\PauCabaneros\\.nuget\\packages\\",
+        "outputPath": "C:\\git\\home\\fermentation.simulator\\src\\Variables\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PauCabaneros\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://internal.nexus.specshell.systems/repository/nuget-hosted": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\git\\home\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj": {
+                "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "JetBrains.Annotations": {
+              "target": "Package",
+              "version": "[2021.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\git\\home\\fermentation.simulator\\src\\YeastAnaerobicModel\\YeastAnaerobicModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\git\\home\\fermentation.simulator\\src\\YeastAnaerobicModel\\YeastAnaerobicModel.csproj",
+        "projectName": "YeastAnaerobicModel",
+        "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\YeastAnaerobicModel\\YeastAnaerobicModel.csproj",
+        "packagesPath": "C:\\Users\\PauCabaneros\\.nuget\\packages\\",
+        "outputPath": "C:\\git\\home\\fermentation.simulator\\src\\YeastAnaerobicModel\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PauCabaneros\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://internal.nexus.specshell.systems/repository/nuget-hosted": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\git\\home\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj": {
+                "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\Interfaces\\Interfaces.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Fermentation.Kinetic.Interfaces": {
+              "target": "Package",
+              "version": "[2.0.5, )"
+            },
+            "Fermentation.Kinetic.Models": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\git\\home\\fermentation.simulator\\tests\\UnitTests\\UnitTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\git\\home\\fermentation.simulator\\tests\\UnitTests\\UnitTests.csproj",
+        "projectName": "UnitTests",
+        "projectPath": "C:\\git\\home\\fermentation.simulator\\tests\\UnitTests\\UnitTests.csproj",
+        "packagesPath": "C:\\Users\\PauCabaneros\\.nuget\\packages\\",
+        "outputPath": "C:\\git\\home\\fermentation.simulator\\tests\\UnitTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PauCabaneros\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://internal.nexus.specshell.systems/repository/nuget-hosted": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\git\\home\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj": {
+                "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj"
+              },
+              "C:\\git\\home\\fermentation.simulator\\src\\Plotting\\Plotting.fsproj": {
+                "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\Plotting\\Plotting.fsproj"
+              },
+              "C:\\git\\home\\fermentation.simulator\\src\\Simulator\\Simulator.fsproj": {
+                "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\Simulator\\Simulator.fsproj"
               }
             }
           }
@@ -251,7 +526,7 @@
           "dependencies": {
             "Fermentation.Kinetic.Models": {
               "target": "Package",
-              "version": "[2.0.1, )"
+              "version": "[2.0.3, )"
             },
             "FluentAssertions": {
               "target": "Package",
@@ -270,6 +545,10 @@
             "xunit": {
               "target": "Package",
               "version": "[2.4.1, )"
+            },
+            "xunit.analyzers": {
+              "target": "Package",
+              "version": "[0.10.0, )"
             },
             "xunit.runner.visualstudio": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -293,66 +572,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\dev\\fermentation.simulator\\YeastAnaerobicModel\\YeastAnaerobicModel.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\dev\\fermentation.simulator\\YeastAnaerobicModel\\YeastAnaerobicModel.csproj",
-        "projectName": "YeastAnaerobicModel",
-        "projectPath": "C:\\dev\\fermentation.simulator\\YeastAnaerobicModel\\YeastAnaerobicModel.csproj",
-        "packagesPath": "C:\\Users\\PauCabaneros\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\fermentation.simulator\\YeastAnaerobicModel\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\PauCabaneros\\AppData\\Roaming\\NuGet\\NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://internal.nexus.specshell.systems/repository/nuget-hosted/": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "dependencies": {
-            "Fermentation.Kinetic.Interfaces": {
-              "target": "Package",
-              "version": "[2.0.1, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

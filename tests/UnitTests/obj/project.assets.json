@@ -8,7 +8,7 @@
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
-      "Fermentation.Kinetic.Interfaces/2.0.1": {
+      "Fermentation.Kinetic.Interfaces/2.0.5": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "2021.2.0"
@@ -20,11 +20,11 @@
           "lib/net5.0/Fermentation.Kinetic.Interfaces.dll": {}
         }
       },
-      "Fermentation.Kinetic.Models/2.0.1": {
+      "Fermentation.Kinetic.Models/2.0.3": {
         "type": "package",
         "dependencies": {
           "FSharp.Core": "5.0.0",
-          "Fermentation.Kinetic.Interfaces": "2.0.1"
+          "Fermentation.Kinetic.Interfaces": "2.0.3"
         },
         "compile": {
           "lib/net5.0/Fermentation.Kinetic.Models.dll": {}
@@ -1638,6 +1638,18 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "VectorOperations/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "MathNet.Numerics": "4.15.0"
+        },
+        "compile": {
+          "lib/net5.0/VectorOperations.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/VectorOperations.dll": {}
+        }
+      },
       "xunit/2.4.1": {
         "type": "package",
         "dependencies": {
@@ -1717,10 +1729,26 @@
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
       },
+      "Fermentation.Simulation.Plotting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "FSharp.Core": "5.0.0",
+          "MathNet.Numerics": "4.15.0",
+          "Plotly.NET": "2.0.0-preview.6"
+        },
+        "compile": {
+          "bin/placeholder/Fermentation.Simulation.Plotting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Fermentation.Simulation.Plotting.dll": {}
+        }
+      },
       "Interfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
+        "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Fermentation.Kinetic.Interfaces": "2.0.5",
           "JetBrains.Annotations": "2021.2.0",
           "MathNet.Numerics": "4.15.0"
         },
@@ -1736,12 +1764,13 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "FSharp.Core": "5.0.0",
-          "Fermentation.Kinetic.Models": "2.0.1",
+          "Fermentation.Kinetic.Models": "2.0.3",
           "Interfaces": "1.0.0",
           "MathNet.Numerics.FSharp": "4.15.0",
           "Plotly.NET": "2.0.0-preview.6",
           "ProcessModel": "1.0.0",
-          "YeastAnaerobicModel": "1.0.0"
+          "Variables": "1.0.0",
+          "VectorOperations": "1.0.0"
         },
         "compile": {
           "bin/placeholder/MassBalance.dll": {}
@@ -1752,10 +1781,11 @@
       },
       "ProcessModel/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
+        "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Interfaces": "1.0.0",
-          "JetBrains.Annotations": "2021.2.0"
+          "JetBrains.Annotations": "2021.2.0",
+          "YeastAnaerobicModel": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ProcessModel.dll": {}
@@ -1764,11 +1794,41 @@
           "bin/placeholder/ProcessModel.dll": {}
         }
       },
+      "Simulator/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "FSharp.Core": "5.0.0",
+          "MassBalance": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Simulator.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Simulator.dll": {}
+        }
+      },
+      "Variables/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Interfaces": "1.0.0",
+          "JetBrains.Annotations": "2021.2.0"
+        },
+        "compile": {
+          "bin/placeholder/Variables.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Variables.dll": {}
+        }
+      },
       "YeastAnaerobicModel/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Fermentation.Kinetic.Interfaces": "2.0.1"
+          "Fermentation.Kinetic.Interfaces": "2.0.5",
+          "Fermentation.Kinetic.Models": "2.0.3",
+          "Interfaces": "1.0.0"
         },
         "compile": {
           "bin/placeholder/YeastAnaerobicModel.dll": {}
@@ -1812,26 +1872,26 @@
         "coverlet.collector.nuspec"
       ]
     },
-    "Fermentation.Kinetic.Interfaces/2.0.1": {
-      "sha512": "NFiWU9wiTWxtA2Z1wm3UQ7a89UMtewRXaf7Ml4Uhs3WvDWL3Da4xg5Sb9ss+qZo/oPiEAKBamuocHulOPVKhRg==",
+    "Fermentation.Kinetic.Interfaces/2.0.5": {
+      "sha512": "reZHJp5W0qCZT65kMx8kxjIrt1G7XMWbC2t1pNr5/uLUiVp/1Efcq2tge6KTPEZc3O2vkDJTRu0WAaYY/l4pJA==",
       "type": "package",
-      "path": "fermentation.kinetic.interfaces/2.0.1",
+      "path": "fermentation.kinetic.interfaces/2.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "fermentation.kinetic.interfaces.2.0.1.nupkg.sha512",
+        "fermentation.kinetic.interfaces.2.0.5.nupkg.sha512",
         "fermentation.kinetic.interfaces.nuspec",
         "lib/net5.0/Fermentation.Kinetic.Interfaces.dll"
       ]
     },
-    "Fermentation.Kinetic.Models/2.0.1": {
-      "sha512": "lo0xN6WaIaZKrtqTjtqnf427GN2bZA2DLYaOnmsulSoin7YDVzfTB3BdxpKLT5LkqqyC0H3UxWXiF8N1RIPGkA==",
+    "Fermentation.Kinetic.Models/2.0.3": {
+      "sha512": "EaUk/pgIqx0qIh3uIq4Rx9PQR5TiWE6Ir8N+7WxJHgu79A7rS91f1R3ph/FwvIobA1I9Y3ByBeN3OI9GXfSipw==",
       "type": "package",
-      "path": "fermentation.kinetic.models/2.0.1",
+      "path": "fermentation.kinetic.models/2.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "fermentation.kinetic.models.2.0.1.nupkg.sha512",
+        "fermentation.kinetic.models.2.0.3.nupkg.sha512",
         "fermentation.kinetic.models.nuspec",
         "lib/net5.0/Fermentation.Kinetic.Models.dll",
         "lib/net5.0/Fermentation.Kinetic.Models.xml"
@@ -5634,6 +5694,18 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "VectorOperations/1.0.0": {
+      "sha512": "DHSAZ6qu+ADLtx4dteqK5pGx/bYTgwE2uqJPBwSu/BdZ+ckikBqwM34DvDDTfwPopQ6JlyWpXmbyK3dJT3cI+g==",
+      "type": "package",
+      "path": "vectoroperations/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net5.0/VectorOperations.dll",
+        "vectoroperations.1.0.0.nupkg.sha512",
+        "vectoroperations.nuspec"
+      ]
+    },
     "xunit/2.4.1": {
       "sha512": "XNR3Yz9QTtec16O0aKcO6+baVNpXmOnPUxDkCY97J+8krUYxPvXT1szYYEUdKk4sB8GOI2YbAjRIOm8ZnXRfzQ==",
       "type": "package",
@@ -5769,6 +5841,11 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
+    "Fermentation.Simulation.Plotting/1.0.0": {
+      "type": "project",
+      "path": "../../src/Plotting/Plotting.fsproj",
+      "msbuildProject": "../../src/Plotting/Plotting.fsproj"
+    },
     "Interfaces/1.0.0": {
       "type": "project",
       "path": "../../src/Interfaces/Interfaces.csproj",
@@ -5784,20 +5861,33 @@
       "path": "../../src/ProcessModel/ProcessModel.csproj",
       "msbuildProject": "../../src/ProcessModel/ProcessModel.csproj"
     },
+    "Simulator/1.0.0": {
+      "type": "project",
+      "path": "../../src/Simulator/Simulator.fsproj",
+      "msbuildProject": "../../src/Simulator/Simulator.fsproj"
+    },
+    "Variables/1.0.0": {
+      "type": "project",
+      "path": "../../src/Variables/Variables.csproj",
+      "msbuildProject": "../../src/Variables/Variables.csproj"
+    },
     "YeastAnaerobicModel/1.0.0": {
       "type": "project",
-      "path": "../../YeastAnaerobicModel/YeastAnaerobicModel.csproj",
-      "msbuildProject": "../../YeastAnaerobicModel/YeastAnaerobicModel.csproj"
+      "path": "../../src/YeastAnaerobicModel/YeastAnaerobicModel.csproj",
+      "msbuildProject": "../../src/YeastAnaerobicModel/YeastAnaerobicModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Fermentation.Kinetic.Models >= 2.0.1",
+      "Fermentation.Kinetic.Models >= 2.0.3",
+      "Fermentation.Simulation.Plotting >= 1.0.0",
       "FluentAssertions >= 5.10.3",
       "MassBalance >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.7.1",
+      "Simulator >= 1.0.0",
       "coverlet.collector >= 1.3.0",
       "xunit >= 2.4.1",
+      "xunit.analyzers >= 0.10.0",
       "xunit.runner.visualstudio >= 2.4.3"
     ]
   },
@@ -5807,11 +5897,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\fermentation.simulator\\tests\\UnitTests\\UnitTests.csproj",
+      "projectUniqueName": "C:\\git\\home\\fermentation.simulator\\tests\\UnitTests\\UnitTests.csproj",
       "projectName": "UnitTests",
-      "projectPath": "C:\\dev\\fermentation.simulator\\tests\\UnitTests\\UnitTests.csproj",
+      "projectPath": "C:\\git\\home\\fermentation.simulator\\tests\\UnitTests\\UnitTests.csproj",
       "packagesPath": "C:\\Users\\PauCabaneros\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\fermentation.simulator\\tests\\UnitTests\\obj\\",
+      "outputPath": "C:\\git\\home\\fermentation.simulator\\tests\\UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PauCabaneros\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -5821,14 +5911,20 @@
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {},
-        "https://internal.nexus.specshell.systems/repository/nuget-hosted/": {}
+        "https://internal.nexus.specshell.systems/repository/nuget-hosted": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\dev\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj": {
-              "projectPath": "C:\\dev\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj"
+            "C:\\git\\home\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj": {
+              "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\MassBalance\\MassBalance.fsproj"
+            },
+            "C:\\git\\home\\fermentation.simulator\\src\\Plotting\\Plotting.fsproj": {
+              "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\Plotting\\Plotting.fsproj"
+            },
+            "C:\\git\\home\\fermentation.simulator\\src\\Simulator\\Simulator.fsproj": {
+              "projectPath": "C:\\git\\home\\fermentation.simulator\\src\\Simulator\\Simulator.fsproj"
             }
           }
         }
@@ -5845,7 +5941,7 @@
         "dependencies": {
           "Fermentation.Kinetic.Models": {
             "target": "Package",
-            "version": "[2.0.1, )"
+            "version": "[2.0.3, )"
           },
           "FluentAssertions": {
             "target": "Package",
@@ -5864,6 +5960,10 @@
           "xunit": {
             "target": "Package",
             "version": "[2.4.1, )"
+          },
+          "xunit.analyzers": {
+            "target": "Package",
+            "version": "[0.10.0, )"
           },
           "xunit.runner.visualstudio": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -5887,7 +5987,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

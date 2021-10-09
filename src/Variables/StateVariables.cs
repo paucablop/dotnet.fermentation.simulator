@@ -3,10 +3,10 @@ using JetBrains.Annotations;
 using MathNet.Numerics.LinearAlgebra;
 using MathNet.Numerics.LinearAlgebra.Double;
 
-namespace Fermentation.Simulator.Process.Model
+namespace Variables
 {
     [PublicAPI]
-    public class InitialConditions : IStateVariables
+    public class StateVariables : IStateVariables
     {
         public double Glucose { get; set; }
         public double Ethanol { get; set; }
@@ -14,13 +14,30 @@ namespace Fermentation.Simulator.Process.Model
         public double Flowrate { get; set; }
         public double Volume { get; set; }
 
-        public InitialConditions()
+        public StateVariables()
         {
-            Glucose = 40.0;
-            Ethanol = 0.0;
-            Biomass = 0.1;
-            Flowrate = 0.5;
-            Volume = 1.0;
+        }
+
+        public StateVariables(Vector<double> stateVariablesVector)
+        {
+            Glucose = stateVariablesVector[0];
+            Ethanol = stateVariablesVector[1];
+            Biomass = stateVariablesVector[2];
+            Flowrate = stateVariablesVector[3];
+            Volume = stateVariablesVector[4];
+        }
+
+        public void StateVariablesFromChemicalVariablesVector(Vector<double> chemicalVariablesVector)
+        {
+            Glucose = chemicalVariablesVector[0];
+            Ethanol = chemicalVariablesVector[1];
+            Biomass = chemicalVariablesVector[2];
+        }
+
+        public void StateVariablesFromProcessVariablesVector(Vector<double> processVariablesVector)
+        {
+            Flowrate = processVariablesVector[0];
+            Volume = processVariablesVector[1];
         }
 
         public Vector<double> IndependentChemicalVariablesVector()

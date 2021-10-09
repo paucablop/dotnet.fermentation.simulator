@@ -6,7 +6,8 @@ open Plotly.NET
 
 module PlotFermentation =
     let Plot (fermentationProfile: Vector<float> array, startTime: float, endTime: float) =
-        let time = Generate.LinearSpaced(fermentationProfile.Length, startTime, endTime)
+        let time =
+            Generate.LinearSpaced(fermentationProfile.Length, startTime, endTime)
 
         let glucose =
             fermentationProfile |> Array.map (fun x -> x.[0])
@@ -23,10 +24,10 @@ module PlotFermentation =
         let volume =
             fermentationProfile |> Array.map (fun x -> x.[4])
 
-        [ Chart.Line(time, glucose, Name="Glucose")
-          Chart.Line(time, ethanol, Name="Ethanol")
-          Chart.Line(time, biomass, Name="Biomass")
-          Chart.Line(time, flowrate, Name="Flowrate")
-          Chart.Line(time, volume, Name="Volume") ]
+        [ Chart.Line(time, glucose, Name = "Glucose")
+          Chart.Line(time, ethanol, Name = "Ethanol")
+          Chart.Line(time, biomass, Name = "Biomass")
+          Chart.Line(time, flowrate, Name = "Flowrate")
+          Chart.Line(time, volume, Name = "Volume") ]
         |> Chart.Combine
         |> Chart.Show

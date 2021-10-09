@@ -9,10 +9,9 @@ namespace Fermentation.Simulator.Process.Model
     public record InletConcentrations : IChemicalVariables
     {
         public double Glucose { get; set; }
-        public double Xylose { get; set; }
-        public double Furfural { get; set; }
         public double Ethanol { get; set; }
         public double Biomass { get; set; }
+
         public InletConcentrations()
         {
             Glucose = 40.0;
@@ -20,16 +19,34 @@ namespace Fermentation.Simulator.Process.Model
             Biomass = 0.0;
         }
 
-        public Vector<double> ToVector()
+        public Vector<double> IndependentChemicalVariablesVector()
         {
-            var variables =
-                new[]
-                {
-                    Glucose,
-                    Ethanol,
-                    Biomass
-                };
-            return Vector.Build.DenseOfArray(variables);
+            var variablesArray = new[]
+            {
+                Glucose,
+            };
+            return Vector.Build.DenseOfArray(variablesArray);
+        }
+
+        public Vector<double> DependentChemicalVariablesVector()
+        {
+            var variablesArray = new[]
+            {
+                Ethanol,
+                Biomass,
+            };
+            return Vector.Build.DenseOfArray(variablesArray);
+        }
+
+        public Vector<double> ChemicalVariablesVector()
+        {
+            var variablesArray = new[]
+            {
+                Glucose,
+                Ethanol,
+                Biomass,
+            };
+            return Vector.Build.DenseOfArray(variablesArray);
         }
     }
 }
