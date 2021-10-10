@@ -28,6 +28,6 @@
     <ProjectReference Include="..\..\src\MassBalance\MassBalance.fsproj" />
     <ProjectReference Include="..\..\src\Interfaces\Interfaces.csproj" />
     <ProjectReference Include="..\..\src\Simulator\Simulator.fsproj" />
-    <ProjectReference Include="..\..\YeastAnaerobicKineticModel\YeastAnaerobicKineticModel.csproj" />
+    <ProjectReference Include="..\..\src\YeastAnaerobicModel\YeastAnaerobicModel.csproj" />
   </ItemGroup>
 </Project>

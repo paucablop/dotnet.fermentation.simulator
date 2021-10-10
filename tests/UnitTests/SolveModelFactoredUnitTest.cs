@@ -14,7 +14,7 @@ namespace UnitTests
             // Arrange
             var startTime = 0.0;
             var endTime = 100.0;
-            var timeSteps = 100;
+            var timeSteps = 10000;
             var initialConditionsVector = new InitialConditions().StateVariablesVector();
             
             // Act

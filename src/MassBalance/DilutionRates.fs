@@ -8,15 +8,15 @@ module DilutionRates =
 
         let dilution =
             stateVariables.Flowrate / stateVariables.Volume
-        
-        let tankConcentrationsVector =
-            stateVariables.ChemicalVariablesVector()
+
+        let tankConcentrationsVector = stateVariables.ChemicalVariablesVector()
 
         let inletConcentrationsVector =
             inletConcentrations.ChemicalVariablesVector()
 
         let dilutionRatesVector =
-            inletConcentrationsVector.Subtract(tankConcentrationsVector)
-            |> Vector.map (fun x -> x * dilution)
+            inletConcentrationsVector
+                .Subtract(tankConcentrationsVector)
+                .Multiply(dilution)
 
         dilutionRatesVector

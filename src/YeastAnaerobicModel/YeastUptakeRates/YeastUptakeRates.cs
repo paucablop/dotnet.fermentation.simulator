@@ -20,7 +20,8 @@ namespace Fermentation.Simulator.Yeast.Anaerobic.Model.YeastUptakeRates
         public double GlucoseUptakeRate(IStateVariables stateVariables)
         {
             return GlucoseUptake.Calculate(stateVariables.Glucose) *
-                   EthanolInhibitsGlucose.Calculate(stateVariables.Ethanol);
+                   EthanolInhibitsGlucose.Calculate(stateVariables.Ethanol) *
+                   stateVariables.Biomass;
         }
     }
 }
