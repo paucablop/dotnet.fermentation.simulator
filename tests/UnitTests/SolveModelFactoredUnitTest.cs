@@ -24,7 +24,7 @@ namespace UnitTests
             
             // Assert
             fermentationProfile[0][0].Should().Be(40.0);
-            fermentationProfile[5][2].Should().BeApproximately( 0.64348082745224666, 5e-1);
+            fermentationProfile[5][2].Should().BeApproximately( 0.09926306484637616, 5e-1);
 
         }
     }

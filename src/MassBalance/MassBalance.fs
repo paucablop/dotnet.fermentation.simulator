@@ -20,18 +20,22 @@ type MassBalance() =
         
         let stateVariables = stateVariablesVector |> StateVariables
 
+        /// Evaluate flowrate
         stateVariables.Flowrate <-
-            if stateVariables.Volume >= this.ProcessConditions.Volume then 0.0
+            if stateVariables.Volume >= this.ProcessConditions.Volume then 0.0 
             else stateVariables.Flowrate
-            
+        
+        /// Calculate rates of process variables 
         let processVariablesRates =
             (stateVariables, this.ProcessConditions)
             |> ProcessRates.Calculate
 
+        /// Calculate the dilution rates of the chemical variables
         let dilutionRates =
             (stateVariables, this.InletConcentrations)
             |> DilutionRates.Calculate
-
+        
+        /// Calculate the kinetic rates
         let kineticRates =
             (stateVariables, this.YeastUptakeRates)
             |> UptakeRates.Calculate

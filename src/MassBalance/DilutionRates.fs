@@ -2,6 +2,7 @@
 
 open Fermentation.Simulator.Interfaces
 open MathNet.Numerics.LinearAlgebra
+open MathNet.Numerics.LinearAlgebra.Double
 
 module DilutionRates =
     let Calculate (stateVariables: IStateVariables, inletConcentrations: IChemicalVariables) =
@@ -9,14 +10,9 @@ module DilutionRates =
         let dilution =
             stateVariables.Flowrate / stateVariables.Volume
 
-        let tankConcentrationsVector = stateVariables.ChemicalVariablesVector()
-
-        let inletConcentrationsVector =
-            inletConcentrations.ChemicalVariablesVector()
-
         let dilutionRatesVector =
-            inletConcentrationsVector
-                .Subtract(tankConcentrationsVector)
+            inletConcentrations.ChemicalVariablesVector()
+                .Subtract(stateVariables.ChemicalVariablesVector())
                 .Multiply(dilution)
 
         dilutionRatesVector
