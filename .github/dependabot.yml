@@ -5,7 +5,6 @@ updates:
     # Look for `package.json` and `lock` files in the `root` directory
     directory: "/"
     registries:
-      - nuget-specshell
       - nuget-org
     # Check the npm registry for updates every day (weekdays)
     schedule:
